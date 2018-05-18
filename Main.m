@@ -28,7 +28,7 @@ Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % nu
 
 % Build tables of coolant properties and temperature
 fprintf('\tBuilding coolant properties and temperature tables\n')
-Coolant=coolant_properties('sodium',Input,Pb,Geometry,'c');
+  Coolant=coolant_properties('sodium',Input,Pb,Geometry,'c');
 
 % Find which assemblies have adjacents and how many adjacent pairs
 Input.adjacentAssemblies = findAdjacentAssemblies(Pb.Var.nass, Input.map, Input.lengthQ_original);

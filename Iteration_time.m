@@ -5,7 +5,7 @@ fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
 User_Input
 % INPUT SPECIFICALLY FOR ITERATION TIME
-comment=['_test']; %additional comments for the name (put '_')
+comment=['_bnbvar']; %additional comments for the name (put '_')
 sol_name=['sol_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
 ini=1;
 
@@ -42,7 +42,7 @@ while 1
     
     % Build tables of coolant properties and temperature
     fprintf('\tBuilding coolant properties and temperature tables\n')
-    Coolant=coolant_properties('sodium',Input,Pb,Geometry,'c');
+    Coolant=coolant_properties('sodium',Input,Pb,Geometry);
     
     % Find which assemblies have adjacents and how many adjacent pairs
     Input.adjacentAssemblies = findAdjacentAssemblies(Pb.Var.nass, Input.map, Input.lengthQ_original);
