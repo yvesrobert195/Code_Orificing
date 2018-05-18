@@ -6,7 +6,8 @@ git reset -- User_Input.m
 git reset -- *~
 git reset -- */*~
 git reset -- */*/*~
-
+git reset -- *.error
+git reset -- *.o
 if [ $# -eq 0 ]
 then
     git commit -m "Update without comment"
