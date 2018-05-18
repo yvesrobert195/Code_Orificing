@@ -1,10 +1,3 @@
-clear variables;
-addpath(genpath('Functions'));
-addpath(genpath('Tools'));
-
-delete Last_run.log
-diary('Last_run.log')
-
 %% User Input
 fprintf('*********************************************************************\n')
 fprintf('ORIFICE OPTIMIZATION SCRIPT\n')
@@ -67,8 +60,10 @@ end
 fprintf('\tSaving workspace\n');
 save Last_Problem
 
-rmpath(genpath('Functions'))
 fprintf('*********************************************************************\n')
 fprintf('END OF SCRIPT\n');
 fprintf('*********************************************************************\n')
 diary off
+try
+movefile clone* ./Clones/;
+end
