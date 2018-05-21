@@ -5,7 +5,7 @@
 %fprintf('\n*********************************************************************\n')
 User_Input
 % INPUT SPECIFICALLY FOR ITERATION TIME
-comment=['_bnbvar']; %additional comments for the name (put '_')
+comment=['_A4var_ref']; %additional comments for the name (put '_')
 sol_name=['sol_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
 ini=1;
 
