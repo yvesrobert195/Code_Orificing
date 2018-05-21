@@ -1,4 +1,7 @@
 function G=geometry(Core)
+if strcmpi(Core,'A_one_row')
+    Core='A';
+end
 if strcmpi(Core,'A')
     %% Geometry [m],[Pa]
     % Rods geometry
