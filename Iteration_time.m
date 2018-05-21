@@ -1,8 +1,8 @@
 %% User Input
-fprintf('*********************************************************************\n')
-fprintf('ORIFICE ITERATION TIME SCRIPT\n')
-fprintf(datestr(now))
-fprintf('\n*********************************************************************\n')
+%fprintf('*********************************************************************\n')
+%fprintf('ORIFICE ITERATION TIME SCRIPT\n')
+%fprintf(datestr(now))
+%fprintf('\n*********************************************************************\n')
 User_Input
 % INPUT SPECIFICALLY FOR ITERATION TIME
 comment=['_bnbvar']; %additional comments for the name (put '_')
@@ -10,21 +10,21 @@ sol_name=['sol_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates uniq
 ini=1;
 
 %% Initialization
-fprintf('*********************************************************************\n')
-fprintf('Initialization\n')
-fprintf('*********************************************************************\n')
+%fprintf('*********************************************************************\n')
+%fprintf('Initialization\n')
+%fprintf('*********************************************************************\n')
 % Assign geometry
-fprintf('\tReading geometry\n')
+%fprintf('\tReading geometry\n')
 Geometry=geometry(Core);
 
 % Reads det files
-fprintf('\tReading power data\n')
+%fprintf('\tReading power data\n')
 Input.Q = readQ(Input.powerDetectorFiles);
 Input.lengthQ_original = length(Input.Q);
 [Input.Q, Input.map] = formMap(Input.Q, Input.assemblyPowerThreshold);
 Input.Q_ave = sum(Input.Q,2)/length(Input.powerDetectorFiles); % divide by number of steps to get average assembly power over cycle
 
-fprintf('\tManipulating data\n');
+%fprintf('\tManipulating data\n');
 Pb.Var.nass = length(Input.Q_ave); % number of assemblies in problem
 Pb.Var.nsteps = length(Input.powerDetectorFiles);
 
@@ -36,12 +36,12 @@ while 1
     fprintf(['TEST WITH ' num2str(ini+n) ' FLOWRATES\n'])
     fprintf('*********************************************************************\n')
     
-    Pb.Var.x=logspace(-2,2,ini+n);
+    Pb.Var.x=logspace(-1,2,ini+n);
     Pb.Var.npossflows = length(Pb.Var.x); % number of possible flowrates specified as data
     Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % number of total variables
     
     % Build tables of coolant properties and temperature
-    fprintf('\tBuilding coolant properties and temperature tables\n')
+    %fprintf('\tBuilding coolant properties and temperature tables\n')
     Coolant=coolant_properties('sodium',Input,Pb,Geometry);
     
     % Find which assemblies have adjacents and how many adjacent pairs
@@ -49,24 +49,24 @@ while 1
     Input.nadj = nnz(Input.adjacentAssemblies); % number of adjacent assembly pairs
     
     % Create constraints
-    fprintf('*********************************************************************\n')
-    fprintf('Constraint matrices\n')
-    fprintf('*********************************************************************\n')
+    %fprintf('*********************************************************************\n')
+    %fprintf('Constraint matrices\n')
+    %fprintf('*********************************************************************\n')
     Pb=make_constraints(Pb,Input,Coolant,Geometry);
     
     % Solve
-    fprintf('*********************************************************************\n')
-    fprintf('Solving with CPLEX\n');
-    fprintf('*********************************************************************\n')
+    %fprintf('*********************************************************************\n')
+    %fprintf('Solving with CPLEX\n');
+    %fprintf('*********************************************************************\n')
     [Solution.solutionvector, Solution.objval, Solution.status, Solution.output] = cplexmilp(Pb.CPLEX.c, Pb.CPLEX.Aineq, Pb.CPLEX.bineq, Pb.CPLEX.Aeq, Pb.CPLEX.beq, [], [], [], [], [], Pb.CPLEX.ctype,[],Pb.CPLEX.opts);
-    fprintf('exit status = % i\n', Solution.status);
-    fprintf('solution time = % f\n', Solution.output.time);
+    %fprintf('exit status = % i\n', Solution.status);
+    %fprintf('solution time = % f\n', Solution.output.time);
     
     % Post processing and check
     if Solution.status==1
-        fprintf('*********************************************************************\n')
+        %fprintf('*********************************************************************\n')
         fprintf('SOLUTION FOUND : Post-processing and checking errors\n');
-        fprintf('*********************************************************************\n')
+        %fprintf('*********************************************************************\n')
         Output=post_process(Solution,Pb,Input,Coolant,Geometry);
     else
         Output={};
@@ -79,8 +79,8 @@ while 1
 end
 
 
-fprintf('*********************************************************************\n')
-fprintf('END OF SCRIPT\n');
-fprintf('*********************************************************************\n')
+%fprintf('*********************************************************************\n')
+%fprintf('END OF SCRIPT\n');
+%fprintf('*********************************************************************\n')
 diary off
 movefile clone* ./Clones/;
