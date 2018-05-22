@@ -6,7 +6,7 @@ fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
 User_Input
 % INPUT SPECIFICALLY FOR SENSITIVITY
-comment=['_test']; %additional comments for the name (put '_')
+comment=['_bnb95']; %additional comments for the name (put '_')
 sol_name=['sens_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
 sens='P.Constraints.rings_outlet'; % Parameter to vary
 vect=1:14;
