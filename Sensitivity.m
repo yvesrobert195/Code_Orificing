@@ -86,4 +86,6 @@ fprintf('*********************************************************************\n
 fprintf('END OF SCRIPT\n');
 fprintf('*********************************************************************\n')
 diary off
-movefile clone* ./Clones/;
+try
+    movefile clone* ./Clones/;
+end
