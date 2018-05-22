@@ -1,42 +1,41 @@
+
 %% User Input
 fprintf('*********************************************************************\n')
 fprintf('ORIFICE ITERATION TIME SCRIPT\n')
 fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
 User_Input
-% INPUT SPECIFICALLY FOR ITERATION TIME
-comment=['_A4var_ref']; %additional comments for the name (put '_')
-sol_name=['sol_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
-ini=45;
-
-%% Initialization
-fprintf('*********************************************************************\n')
-fprintf('Initialization\n')
-fprintf('*********************************************************************\n')
-% Assign geometry
-fprintf('\tReading geometry\n')
-Geometry=geometry(Input.Core);
-
-% Reads det files
-fprintf('\tReading power data\n')
-Input.Q = readQ(Input.powerDetectorFiles);
-Input.lengthQ_original = length(Input.Q);
-[Input.Q, Input.map] = formMap(Input.Q, Input.assemblyPowerThreshold);
-Input.Q_ave = sum(Input.Q,2)/length(Input.powerDetectorFiles); % divide by number of steps to get average assembly power over cycle
-
-fprintf('\tManipulating data\n');
-Pb.Var.nass = length(Input.Q_ave); % number of assemblies in problem
-Pb.Var.nsteps = length(Input.powerDetectorFiles);
-
-
+% INPUT SPECIFICALLY FOR SENSITIVITY
+comment=['_test']; %additional comments for the name (put '_')
+sol_name=['sens_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
+sens='Pb.Constraints.xi'; % Parameter to vary
+vect=40:5:60;
 
 n=0;
-while 1
+for factor=1:length(vect)
+    eval([sens '=' num2str(vect(factor)) ';']);
     fprintf('\n\n*********************************************************************\n')
-    fprintf(['TEST WITH ' num2str(ini+n) ' FLOWRATES\n'])
+    fprintf(['TEST WITH ' sens ' = ' num2str(vect(factor)) '\n'])
     fprintf('*********************************************************************\n')
+
+    %% Initialization
+    fprintf('*********************************************************************\n')
+    fprintf('Initialization\n')
+    fprintf('*********************************************************************\n')
+    % Assign geometry
+    fprintf('\tReading geometry\n')
+    Geometry=geometry(Input.Core);
     
-    Pb.Var.x=logspace(-2,2,ini+n);
+    % Reads det files
+    fprintf('\tReading power data\n')
+    Input.Q = readQ(Input.powerDetectorFiles);
+    Input.lengthQ_original = length(Input.Q);
+    [Input.Q, Input.map] = formMap(Input.Q, Input.assemblyPowerThreshold);
+    Input.Q_ave = sum(Input.Q,2)/length(Input.powerDetectorFiles); % divide by number of steps to get average assembly power over cycle
+    
+    fprintf('\tManipulating data\n');
+    Pb.Var.nass = length(Input.Q_ave); % number of assemblies in problem
+    Pb.Var.nsteps = length(Input.powerDetectorFiles);
     Pb.Var.npossflows = length(Pb.Var.x); % number of possible flowrates specified as data
     Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % number of total variables
     
@@ -50,6 +49,7 @@ while 1
     
     % Read and create rings
     Geometry.rings=find_rings(Input.adjacentAssemblies);
+    
     
     % Create constraints
     fprintf('*********************************************************************\n')
@@ -76,7 +76,7 @@ while 1
         fprintf('\n**********************    NO SOLUTION FOUND    **********************\n\n')
     end
     
-    Results(n+1,:)={length(Pb.Var.x) Output Solution Solution.status};
+    Results(n+1,:)={eval(sens) Output Solution Solution.status};
     n=n+1;
     save(['Solutions/' sol_name],'Results')
 end

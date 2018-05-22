@@ -1,4 +1,4 @@
-function c=coolant_properties(coolant,I,P,G,constant)
+function c=coolant_properties(coolant,I,P,G)
 x=P.Var.x;
 Q=I.Q;
 A_flow=G.Assembly.flow_area;
@@ -17,8 +17,7 @@ c.T_gradient=NaN*ones(size(Q,1),length(x),size(Q,2));
 c.T_inlet=355;
 
 if coolant=='sodium'
-    
-    if exist('constant') && constant=='c'
+    if I.constant_properties==1
         c.density(:,:,:)=850;
         c.friction_factor(:,:,:)=0.021132;
         c.heat_capacity(:,:,:)=1272;

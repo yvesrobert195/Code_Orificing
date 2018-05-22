@@ -1,4 +1,4 @@
-function P=make_constraints(P,I,C,G)
+function P=make_constraints_old(P,I,C,G)
 nass=P.Var.nass;
 npossflows=P.Var.npossflows;
 nsteps=P.Var.nsteps;
@@ -16,6 +16,7 @@ T_in=C.T_inlet;
 
 % Constraint data
 v_max = P.Constraints.v_max;
+xi = P.Constraints.xi;
 dT_max = P.Constraints.dT_max;
 dP_max = P.Constraints.dP_max;
 T_out_bar=P.Constraints.T_out_bar;
@@ -81,20 +82,12 @@ for k = 1:nsteps
         for j=1:npossflows
             Aineq_i(idx_Aineq) = nsteps*nass+k;
             Aineq_j(idx_Aineq) = nass+(i-1)*npossflows+j;
-            if G.rings(i)<=P.Constraints.rings_outlet
-                Aineq_v(idx_Aineq) = -x(j)*(Omega(i,j,k)+T_in-(T_out_bar-T_out_bar_tol));
-            else
-                Aineq_v(idx_Aineq) = 0;
-            end
+            Aineq_v(idx_Aineq) = -x(j)*(Omega(i,j,k)+T_in-(T_out_bar-T_out_bar_tol));
             idx_Aineq = idx_Aineq+1;
             
             Aineq_i(idx_Aineq) = nsteps*nass+nsteps+k;
             Aineq_j(idx_Aineq) = nass+(i-1)*npossflows+j;
-            if G.rings(i)<=P.Constraints.rings_outlet
-                Aineq_v(idx_Aineq) = x(j)*(Omega(i,j,k)+T_in-(T_out_bar+T_out_bar_tol));
-            else
-                Aineq_v(idx_Aineq) = 0;
-            end
+            Aineq_v(idx_Aineq) = x(j)*(Omega(i,j,k)+T_in-(T_out_bar+T_out_bar_tol));
             idx_Aineq = idx_Aineq+1;
         end
     end
@@ -121,47 +114,28 @@ for k = 1:nsteps
     for i = 1:nass
         for ip = I.adjacentAssemblies(i,:)
             if ip > 0
-                for j=1:npossflows
-                    Aineq_i(idx_Aineq)=nsteps*nass+2*nsteps+nsteps*nass+constraint_idx;
-                    Aineq_j(idx_Aineq)=nass+(i-1)*npossflows+j;
-                    Aineq_v(idx_Aineq) = Omega(i,j,k);
-                    idx_Aineq = idx_Aineq+1;
-                end
-                for j=1:npossflows
-                    Aineq_i(idx_Aineq)= nsteps*nass+2*nsteps+nsteps*nass+constraint_idx;
-                    Aineq_j(idx_Aineq)= nass+(ip-1)*npossflows+j;
-                    Aineq_v(idx_Aineq)= -Omega(ip,j,k);
-                    idx_Aineq = idx_Aineq+1;
-                end
-                if G.rings(i)<=G.nrings && G.rings(ip)<=G.nrings
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_power;
-                else
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_blanket;
-                end
-                constraint_idx = constraint_idx + 1;
+                Aineq_i(idx_Aineq:idx_Aineq+npossflows-1) = nsteps*nass+2*nsteps+nsteps*nass+constraint_idx;
+                Aineq_j(idx_Aineq:idx_Aineq+npossflows-1) = [nass+(i-1)*npossflows+1:nass+(i-1)*npossflows+npossflows];
+                Aineq_v(idx_Aineq:idx_Aineq+npossflows-1) = Omega(i,:,k);
+                Aineq_i(idx_Aineq+npossflows:idx_Aineq+2*npossflows-1) = nsteps*nass+2*nsteps+nsteps*nass+constraint_idx;
+                Aineq_j(idx_Aineq+npossflows:idx_Aineq+2*npossflows-1) = [nass+(ip-1)*npossflows+1:nass+(ip-1)*npossflows+npossflows];
+                Aineq_v(idx_Aineq+npossflows:idx_Aineq+2*npossflows-1) = -Omega(ip,:,k);
+                idx_Aineq = idx_Aineq+2*npossflows;
                 
-                for j=1:npossflows
-                    Aineq_i(idx_Aineq)=nsteps*nass+2*nsteps+nsteps*nass+constraint_idx;
-                    Aineq_j(idx_Aineq)=nass+(i-1)*npossflows+j;
-                    Aineq_v(idx_Aineq) = -Omega(i,j,k);
-                    idx_Aineq = idx_Aineq+1;
-                end
-                for j=1:npossflows
-                    Aineq_i(idx_Aineq)= nsteps*nass+2*nsteps+nsteps*nass+constraint_idx;
-                    Aineq_j(idx_Aineq)= nass+(ip-1)*npossflows+j;
-                    Aineq_v(idx_Aineq)= Omega(ip,j,k);
-                    idx_Aineq = idx_Aineq+1;
-                end
-                if G.rings(i)<=G.nrings && G.rings(ip)<=G.nrings
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_power;
-                else
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_blanket;
-                end
-                constraint_idx = constraint_idx + 1;
+                Aineq_i(idx_Aineq:idx_Aineq+npossflows-1) = nsteps*nass+2*nsteps+nsteps*nass+constraint_idx+1;
+                Aineq_j(idx_Aineq:idx_Aineq+npossflows-1) = [nass+(i-1)*npossflows+1:nass+(i-1)*npossflows+npossflows];
+                Aineq_v(idx_Aineq:idx_Aineq+npossflows-1) = -Omega(i,:,k);
+                Aineq_i(idx_Aineq+npossflows:idx_Aineq+2*npossflows-1) = nsteps*nass+2*nsteps+nsteps*nass+constraint_idx+1;
+                Aineq_j(idx_Aineq+npossflows:idx_Aineq+2*npossflows-1) = [nass+(ip-1)*npossflows+1:nass+(ip-1)*npossflows+npossflows];
+                Aineq_v(idx_Aineq+npossflows:idx_Aineq+2*npossflows-1) = Omega(ip,:,k);
+                idx_Aineq = idx_Aineq+2*npossflows;
+                
+                constraint_idx = constraint_idx + 2;
             end
         end
     end
 end
+bineq(nsteps*nass+2*nsteps+nsteps*nass+1:nsteps*nass+2*nsteps+nsteps*nass+2*nadj*nsteps) = xi;
 
 %number of groups (constraint 8)
 for i = 1:nass

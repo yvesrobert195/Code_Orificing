@@ -49,14 +49,17 @@ for k = 1:nsteps
     if sum(O.Tout(:,k) > C.T_inlet+P.Constraints.dT_max) > 0
         fprintf('\terror: an assembly in step %i violates the outlet temperature constraint\n', k);
     end
-    if sum((C.T_inlet + sum(alpha(:,k))/sum(O.m)) > P.Constraints.T_out_bar+P.Constraints.T_out_bar_tol) > 0
+    if mean(O.Tout(:,k)) > P.Constraints.T_out_bar+P.Constraints.T_out_bar_tol
         fprintf('\terror: mixed outlet temperature violates constraint in step %i\n', k);
-    elseif sum((C.T_inlet + sum(alpha(:,k))/sum(O.m)) < P.Constraints.T_out_bar-P.Constraints.T_out_bar_tol) > 0
+    elseif mean(O.Tout(:,k)) < P.Constraints.T_out_bar-P.Constraints.T_out_bar_tol
         fprintf('\terror: mixed outlet temperature violates constraint in step %i\n', k);
     end
+
+    
     if max(max(O.adjT(:,:,k)))>P.Constraints.xi
         fprintf('\terror: Two adjacent assemblies violate the maximum temperature gradient in step %i\n', k);
     end
+    
 end
 
 sum3=0;

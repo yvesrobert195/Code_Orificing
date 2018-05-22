@@ -11,7 +11,7 @@ fprintf('Initialization\n')
 fprintf('*********************************************************************\n')
 % Assign geometry
 fprintf('\tReading geometry\n')
-Geometry=geometry(Core);
+Geometry=geometry(Input.Core);
 
 % Reads det files
 fprintf('\tReading power data\n')
@@ -28,11 +28,14 @@ Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % nu
 
 % Build tables of coolant properties and temperature
 fprintf('\tBuilding coolant properties and temperature tables\n')
-Coolant=coolant_properties('sodium',Input,Pb,Geometry,'c');
+Coolant=coolant_properties('sodium',Input,Pb,Geometry);
 
 % Find which assemblies have adjacents and how many adjacent pairs
 Input.adjacentAssemblies = findAdjacentAssemblies(Pb.Var.nass, Input.map, Input.lengthQ_original);
 Input.nadj = nnz(Input.adjacentAssemblies); % number of adjacent assembly pairs
+
+% Read and create rings
+Geometry.rings=find_rings(Input.adjacentAssemblies);
 
 % Create constraints
 fprintf('*********************************************************************\n')
@@ -68,30 +71,3 @@ diary off
 try
     movefile clone* ./Clones/;
 end
-
-% %% OPTIONAL : plot all outputs except deltas and betas
-% close all
-% Out=struct2cell(Output);
-% field_names=fieldnames(Output);
-% for i=4%[1 4:length(Out)]
-%     for j=1:size(Out{i},2)
-%         subplot(2,ceil(size(Out{i},2)/2),j)
-%         plot_vect(Input.adjacentAssemblies,Out{i}(:,j));
-%         title([field_names{i} '_' num2str(j)])
-%         caxis([min(min(Out{i})) max(max(Out{i}))])
-%     end
-% end
-% %%
-% f=figure;
-% i=4;
-%
-% while 1
-%     for j=1:size(Out{i},2)
-%         plot_vect(Input.adjacentAssemblies,Out{i}(:,j));
-%         title([field_names{i} '_' num2str(j)])
-%         caxis([min(min(Out{i})) max(max(Out{i}))])
-%         tic
-%         pause(1e-5);
-%     end
-% end
-%

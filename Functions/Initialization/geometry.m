@@ -27,6 +27,9 @@ if strcmpi(Core,'A')
     G.Core.active_volume=18.58;
     G.Core.equivalent_diameter=280.79e-2;
     G.Core.active_height=300e-2;
+    
+    G.nrings=6; % frontier between power assemblies and blanket
+
 elseif strcmpi(Core,'bnb')
     %% Geometry [m],[Pa]
     % Rods geometry
@@ -52,6 +55,8 @@ elseif strcmpi(Core,'bnb')
     G.Core.active_volume=46.63;
     G.Core.equivalent_diameter=444.87e-2;
     G.Core.active_height=300e-2;
+    
+    G.nrings=9;
 else
     error('Please specify a valid core name')
 end
