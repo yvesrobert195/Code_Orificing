@@ -128,10 +128,8 @@ for k = 1:nsteps
                 end
                 if G.rings(i)<=G.nrings && G.rings(ip)<=G.nrings
                     bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_power;
-                elseif G.rings(i)<=G.nrings && G.rings(ip)>G.nrings
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_blanket;
                 else
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=1e4;
+                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_blanket;
                 end
                 constraint_idx = constraint_idx + 1;
                 
@@ -149,10 +147,8 @@ for k = 1:nsteps
                 end
                 if G.rings(i)<=G.nrings && G.rings(ip)<=G.nrings
                     bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_power;
-                elseif G.rings(i)<=G.nrings && G.rings(ip)>G.nrings
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_blanket;
                 else
-                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=1e4;
+                    bineq(nsteps*nass+2*nsteps+nsteps*nass+constraint_idx)=P.Constraints.xi_blanket;
                 end
                 constraint_idx = constraint_idx + 1;
             end

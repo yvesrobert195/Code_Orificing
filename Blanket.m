@@ -5,7 +5,7 @@ fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
 User_Input
 % INPUT SPECIFICALLY FOR BLANKET
-Pb.Constraints.xi_blanket= 1000;
+Pb.Constraints.xi_blanket= 40;
 Pb.Constraints.xi_power = 40;
 
 
@@ -46,7 +46,6 @@ Input.nadj = nnz(Input.adjacentAssemblies); % number of adjacent assembly pairs
 
 % Read and create rings
 Geometry.rings=find_rings(Input.adjacentAssemblies);
-Geometry.nrings=max(Geometry.rings);
 
 % Create constraints
 fprintf('*********************************************************************\n')
