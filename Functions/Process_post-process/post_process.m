@@ -32,13 +32,26 @@ for k=1:nsteps
     end
 end
 
-%check max outlet temp and mixed outlet temp constraints
+adjT=NaN*ones(nass,6,nsteps);
+for k=1:nsteps
+    for i=1:nass
+        for j=1:6
+            if I.adjacentAssemblies(i,j)~=0
+                O.adjT(i,j,k)=abs(O.Tout(i,k)-O.Tout(I.adjacentAssemblies(i,j),k));
+            end
+        end
+    end
+end
+
+%check max outlet temp, adj temp and mixed outlet temp constraints
 fprintf('\tChecking errors\n')
 for k = 1:nsteps
     if sum(O.Tout(:,k) > C.T_inlet+P.Constraints.dT_max) > 0
         fprintf('\terror: an assembly in step %i violates the outlet temperature constraint\n', k);
     end
-    
+    if max(max(O.adjT(:,:,k)))>P.Constraints.xi
+        fprintf('\terror: Two adjacent assemblies violate the maximum temperature gradient in step %i\n', k);
+    end
     if sum((C.T_inlet + sum(alpha(:,k))/sum(O.m)) > P.Constraints.T_out_bar+P.Constraints.T_out_bar_tol) > 0
         fprintf('\terror: mixed outlet temperature violates constraint in step %i\n', k);
     elseif sum((C.T_inlet + sum(alpha(:,k))/sum(O.m)) < P.Constraints.T_out_bar-P.Constraints.T_out_bar_tol) > 0
@@ -55,4 +68,5 @@ end
 if sum3 > 0
     fprintf('\terror: an assembly violates the maximum velocity constraint\n');
 end
+
 fprintf('\tChecked\n')
