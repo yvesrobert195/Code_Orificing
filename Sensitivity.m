@@ -8,12 +8,11 @@ User_Input
 % INPUT SPECIFICALLY FOR SENSITIVITY
 comment=['_test']; %additional comments for the name (put '_')
 sol_name=['sens_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
-sens='Pb.Constraints.xi'; % Parameter to vary
-vect=40:5:60;
+sens='P.Constraints.rings_outlet'; % Parameter to vary
+vect=1:14;
 
 n=0;
 for factor=1:length(vect)
-    eval([sens '=' num2str(vect(factor)) ';']);
     fprintf('\n\n*********************************************************************\n')
     fprintf(['TEST WITH ' sens ' = ' num2str(vect(factor)) '\n'])
     fprintf('*********************************************************************\n')
@@ -38,6 +37,8 @@ for factor=1:length(vect)
     Pb.Var.nsteps = length(Input.powerDetectorFiles);
     Pb.Var.npossflows = length(Pb.Var.x); % number of possible flowrates specified as data
     Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % number of total variables
+
+    eval([sens '=' num2str(vect(factor)) ';']);
     
     % Build tables of coolant properties and temperature
     fprintf('\tBuilding coolant properties and temperature tables\n')
@@ -49,7 +50,6 @@ for factor=1:length(vect)
     
     % Read and create rings
     Geometry.rings=find_rings(Input.adjacentAssemblies);
-    
     
     % Create constraints
     fprintf('*********************************************************************\n')
