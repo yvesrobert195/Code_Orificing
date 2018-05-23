@@ -61,7 +61,7 @@ else
     fprintf('\n**********************    NO SOLUTION FOUND    **********************\n\n')
 end
 fprintf('\tSaving workspace\n');
-save Last_Problem
+save A4xi
 
 fprintf('*********************************************************************\n')
 fprintf('END OF SCRIPT\n');
