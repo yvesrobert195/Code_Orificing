@@ -64,7 +64,7 @@ for k = 1:nsteps
         sum3=sum3+(O.m(i)/(O.density(i,k)*G.Assembly.flow_area)>P.Constraints.v_max);
     end
     % Constraint 4
-    if max(max(O.adjT(G.rings<G.nrings,:,k)))>O.xi
+    if max(max(O.adjT(G.rings<G.nrings,:,k)))>=O.xi
         fprintf('\terror: Two adjacent power assemblies violate the maximum temperature gradient in step %i\n', k);
             er=er+1;
     end
