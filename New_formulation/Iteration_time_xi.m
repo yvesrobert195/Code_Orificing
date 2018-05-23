@@ -3,9 +3,9 @@ fprintf('*********************************************************************\n
 fprintf('ORIFICE ITERATION TIME SCRIPT\n')
 fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
-User_Input
+User_Input_xi
 % INPUT SPECIFICALLY FOR ITERATION TIME
-comment=['_test']; %additional comments for the name (put '_')
+comment=['_A']; %additional comments for the name (put '_')
 sol_name=['xi_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
 ini=1;
 

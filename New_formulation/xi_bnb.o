@@ -1,0 +1,867 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> *********************************************************************
+>> ORIFICE ITERATION TIME SCRIPT
+>> 23-May-2018 11:53:31>> 
+*********************************************************************
+>> Reading input
+>> >> >> >> >> >> >> *********************************************************************
+>> Initialization
+>> *********************************************************************
+>> >> 	Reading geometry
+>> >> >> >> 	Reading power data
+>> >> >> >> >> >> 	Manipulating data
+>> >> >> >> >> 
+
+*********************************************************************
+TEST WITH 1 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 1047
+		            integer = 0
+		             binary = 523
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Infeasibility row 'c2093':  0 <= -5.06466e+06.
+Presolve time = 0.01 sec. (10.84 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (12.35 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (12.35 ticks)
+exit status = -2
+solution time =  0.014862
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 2 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 1570
+		            integer = 0
+		             binary = 1046
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.01 sec. (8.98 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (11.38 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (11.38 ticks)
+exit status = -2
+solution time =  0.014277
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 3 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 2093
+		            integer = 0
+		             binary = 1569
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.02 sec. (11.24 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.03 sec. (14.53 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.03 sec. (14.53 ticks)
+exit status = -2
+solution time =  0.030101
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 4 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 2616
+		            integer = 0
+		             binary = 2092
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.03 sec. (20.39 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.04 sec. (24.58 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.04 sec. (24.58 ticks)
+exit status = -2
+solution time =  0.047681
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 5 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 3139
+		            integer = 0
+		             binary = 2615
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.04 sec. (24.50 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.06 sec. (29.59 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.06 sec. (29.59 ticks)
+exit status = -2
+solution time =  0.068416
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 6 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 3662
+		            integer = 0
+		             binary = 3138
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.04 sec. (27.57 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.05 sec. (33.56 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.05 sec. (33.56 ticks)
+exit status = -2
+solution time =  0.054559
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 7 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 4185
+		            integer = 0
+		             binary = 3661
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Implied bounds make row 'c2093' infeasible.
+Presolve time = 0.15 sec. (266.12 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.16 sec. (273.00 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.16 sec. (273.00 ticks)
+exit status = -2
+solution time =  0.165949
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 8 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 4708
+		            integer = 0
+		             binary = 4184
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Implied bounds make row 'c2093' infeasible.
+Presolve time = 0.32 sec. (461.10 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.35 sec. (468.89 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.35 sec. (468.89 ticks)
+exit status = -2
+solution time =  0.356596
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 9 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 5231
+		            integer = 0
+		             binary = 4707
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2094' infeasible, all entries at implied bounds.
+Presolve time = 0.34 sec. (687.19 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.36 sec. (695.88 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.36 sec. (695.88 ticks)
+exit status = -2
+solution time =  0.361547
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 10 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 5754
+		            integer = 0
+		             binary = 5230
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Implied bounds make row 'c2093' infeasible.
+Presolve time = 0.56 sec. (1181.33 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.58 sec. (1190.91 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.58 sec. (1190.91 ticks)
+exit status = -2
+solution time =  0.585615
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 11 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 6277
+		            integer = 0
+		             binary = 5753
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2094' infeasible, all entries at implied bounds.
+Presolve time = 0.73 sec. (1614.79 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.77 sec. (1625.27 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.77 sec. (1625.27 ticks)
+exit status = -2
+solution time =  0.775889
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 12 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 6800
+		            integer = 0
+		             binary = 6276
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.81 sec. (1795.57 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.84 sec. (1806.95 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.84 sec. (1806.95 ticks)
+exit status = -2
+solution time =  0.847916
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 13 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 7323
+		            integer = 0
+		             binary = 6799
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 0.88 sec. (1984.32 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.90 sec. (1996.60 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.90 sec. (1996.60 ticks)
+exit status = -2
+solution time =  0.900132
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 14 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 7846
+		            integer = 0
+		             binary = 7322
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2093' infeasible, all entries at implied bounds.
+Presolve time = 1.02 sec. (2226.15 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.07 sec. (2239.33 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.07 sec. (2239.33 ticks)
+exit status = -2
+solution time =  1.073663
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 15 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 8369
+		            integer = 0
+		             binary = 7845
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2096' infeasible, all entries at implied bounds.
+Presolve time = 1.09 sec. (2402.19 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.14 sec. (2416.26 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.14 sec. (2416.26 ticks)
+exit status = -2
+solution time =  1.146995
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 16 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 8892
+		            integer = 0
+		             binary = 8368
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2094' infeasible, all entries at implied bounds.
+Presolve time = 1.44 sec. (2631.27 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.50 sec. (2646.24 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.50 sec. (2646.24 ticks)
+exit status = -2
+solution time =  1.503444
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 17 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 9415
+		            integer = 0
+		             binary = 8891
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2095' infeasible, all entries at implied bounds.
+Presolve time = 1.29 sec. (2831.33 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.35 sec. (2847.20 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.35 sec. (2847.20 ticks)
+exit status = -2
+solution time =  1.357189
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 18 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 9938
+		            integer = 0
+		             binary = 9414
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2095' infeasible, all entries at implied bounds.
+Presolve time = 1.72 sec. (3013.47 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.78 sec. (3030.24 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.78 sec. (3030.24 ticks)
+exit status = -2
+solution time =  1.781454
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 19 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 10461
+		            integer = 0
+		             binary = 9937
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2096' infeasible, all entries at implied bounds.
+Presolve time = 1.81 sec. (3192.53 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.87 sec. (3210.20 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.87 sec. (3210.20 ticks)
+exit status = -2
+solution time =  1.877884
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 20 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 31138
+		             equality = 1046
+		           inequality = 30092
+		number of variables = 10984
+		            integer = 0
+		             binary = 10460
+		         continuous = 524
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Row 'c2095' infeasible, all entries at implied bounds.
+Presolve time = 1.73 sec. (3374.32 ticks)
+
+Root node processing (before b&c):
+  Real time             =    1.80 sec. (3392.89 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    1.80 sec. (3392.89 ticks)
+exit status = -2
+solution time =  1.806094
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH 21 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
