@@ -1,11 +1,12 @@
-function [same_pos,new_Q,adjacentAssemblies]=readQ_sym(powerDetectorFiles,assemblyPowerThreshold)
-Q = readQ(powerDetectorFiles);
-lengthQ_original = length(Q);
-[Q, map] = formMap(Q, assemblyPowerThreshold);
-nass=length(Q);
+function [same_pos,New_pow,adjacentAssemblies]=readQ_sym(powerDetectorFiles,assemblyPowerThreshold)
+Power = readQ(powerDetectorFiles);
+lengthQ_original = length(Power);
+[Power, map] = formMap(Power, assemblyPowerThreshold);
+nass=length(Power);
 adjacentAssemblies = findAdjacentAssemblies(nass, map, lengthQ_original);
 Sixths_index;
-%%
+for m=1:size(Power,2)
+Q=Power(:,m);
 for i=1:6
     for j=1:length(sixths{i})
         for k=1:length(sixths{i}{j})
@@ -33,6 +34,9 @@ end
 
 for i=1:length(new_Q_rings)
     new_Q(indices(i,1),1)=new_Q_rings(i);
+end
+
+New_pow(:,m)=new_Q;
 end
 same_pos(1)=[];
 same_pos=cell2mat(same_pos);
