@@ -20,4 +20,141 @@ For product information, visit www.mathworks.com.
 >> >> >> >> 	Reading power data
 >> >> >> >> >> >> 	Manipulating data
 >> >> >> >> >> >> >> 	Building coolant properties and temperature tables
->> 
+>> >> >> >> >> >> >> >> >> >> >> *********************************************************************
+>> Constraint matrices
+>> *********************************************************************
+>> 	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 70536
+		             equality = 196
+		           inequality = 70340
+		number of variables = 59296
+		            integer = 0
+		             binary = 58800
+		         continuous = 496
+>> >> >> *********************************************************************
+>> Solving with CPLEX
+>> *********************************************************************
+>> Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 6271 rows and 19121 columns...
+Presolve has improved bounds 18311 times...
+Presolve has eliminated 32601 rows and 25298 columns...
+Presolve has improved bounds 24289 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 32766 rows and 25309 columns.
+MIP Presolve modified 2345636 coefficients.
+Reduced MIP has 37461 rows, 33987 columns, and 1472288 nonzeros.
+Reduced MIP has 33690 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 19.00 sec. (33873.96 ticks)
+Found incumbent of value 108.000000 after 20.87 sec. (35330.52 ticks)
+Probing time = 0.14 sec. (25.15 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 37461 rows, 33987 columns, and 1472288 nonzeros.
+Reduced MIP has 33987 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.90 sec. (947.14 ticks)
+Probing time = 0.06 sec. (24.59 ticks)
+Clique table members: 124225.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 4.64 sec. (4193.05 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          108.0000        0.0000           100.00%
+      0     0       21.3978   611      108.0000       21.3978     5972   80.19%
+*     0+    0                           37.0000       21.3978            42.17%
+      0     0       23.8453   777       37.0000     Cuts: 236     7010   35.55%
+      0     0       24.5690   909       37.0000     Cuts: 120     7557   33.60%
+      0     0       24.9446   854       37.0000      Cuts: 70     8125   32.58%
+*     0+    0                           36.0000       24.9446            30.71%
+*     0+    0                           31.0000       24.9446            19.53%
+*     0+    0                           30.0000       24.9446            16.85%
+      0     0       25.1958   942       30.0000      Cuts: 75     8471   16.01%
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 10634 rows and 10598 columns.
+MIP Presolve modified 398527 coefficients.
+Reduced MIP has 26827 rows, 23389 columns, and 981734 nonzeros.
+Reduced MIP has 23389 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.32 sec. (3980.96 ticks)
+Probing fixed 1 vars, tightened 0 bounds.
+Probing time = 0.15 sec. (23.75 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 1 columns.
+MIP Presolve modified 673 coefficients.
+Reduced MIP has 26826 rows, 23388 columns, and 981722 nonzeros.
+Reduced MIP has 23388 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.31 sec. (648.50 ticks)
+Represolve time = 5.18 sec. (4849.84 ticks)
+Probing time = 0.06 sec. (18.19 ticks)
+Clique table members: 173572.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 5.00 sec. (4379.76 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           30.0000       25.1958            16.01%
+      0     0       25.1990   947       30.0000       25.1990    14101   16.00%
+      0     0       25.6458   930       30.0000      Cuts: 83    14545   14.51%
+*     0+    0                           29.0000       25.6458            11.57%
+      0     0       25.7780   946       29.0000      Cuts: 21    14734   11.11%
+      0     0       25.8240   965       29.0000      Cuts: 22    14881   10.95%
+      0     0       25.8613   995       29.0000      Cuts: 21    15031   10.82%
+      0     0       25.9647  1096       29.0000      Cuts: 29    15278   10.47%
+      0     0       26.0054  1124       29.0000      Cuts: 15    15424   10.33%
+      0     0       26.0309  1161       29.0000      Cuts: 19    15583   10.24%
+      0     0       26.0431  1125       29.0000       Cuts: 8    15713   10.20%
+      0     0       26.0763  1128       29.0000      Cuts: 12    15953   10.08%
+      0     0       26.0950  1125       29.0000      Cuts: 11    16204   10.02%
+      0     0       26.1094  1143       29.0000      Cuts: 17    16337    9.97%
+      0     0       26.1514  1169       29.0000      Cuts: 13    16585    9.82%
+      0     0       26.1922  1106       29.0000      Cuts: 11    16833    9.68%
+      0     0       26.2130  1185       29.0000      Cuts: 14    16991    9.61%
+      0     0       26.2140  1172       29.0000    GUBcuts: 1    17033    9.61%
+      0     0       26.2156  1196       29.0000       Cuts: 2    17080    9.60%
+      0     2       26.2156  1196       29.0000       26.2156    17080    9.60%
+Elapsed time = 82.63 sec. (82097.03 ticks, tree = 0.01 MB, solutions = 6)
+     14     9       26.5256   770       29.0000       26.2721    19561    9.41%
+    498    84       26.9857   807       28.0000       26.4433   146558    5.56%
+GUB cover cuts applied:  132
+Clique cuts applied:  26
+Cover cuts applied:  153
+Implied bound cuts applied:  1
+Flow cuts applied:  7
+Mixed integer rounding cuts applied:  37
+Zero-half cuts applied:  56
+
+Root node processing (before b&c):
+  Real time             =   81.62 sec. (81665.91 ticks)
+Parallel b&c, 20 threads:
+  Real time             =   21.54 sec. (11380.44 ticks)
+  Sync time (average)   =    7.06 sec.
+  Wait time (average)   =    0.28 sec.
+                          ------------
+Total (root+branch&cut) =  103.16 sec. (93046.36 ticks)
+>> exit status =  1
+>> solution time =  103.174500
+>> >> >> *********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	error: mixed outlet temperature violates constraint in step 1
+	error: mixed outlet temperature violates constraint in step 2
+	error: mixed outlet temperature violates constraint in step 3
+	error: mixed outlet temperature violates constraint in step 4
+	Checked : 	WARNING : 4 errors on constraints found during post-processing
+>> 	Saving workspace
+>> >> >> *********************************************************************
+>> END OF SCRIPT
+>> *********************************************************************
+>> >> >> >> 

@@ -1,0 +1,112 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> *********************************************************************
+>> ORIFICE OPTIMIZATION SCRIPT
+>> 23-May-2018 09:29:35>> 
+*********************************************************************
+>> Reading input
+>> >> >> *********************************************************************
+>> Initialization
+>> *********************************************************************
+>> >> 	Reading geometry
+>> >> >> >> 	Reading power data
+>> >> >> >> >> >> 	Manipulating data
+>> >> >> >> >> >> >> 	Building coolant properties and temperature tables
+>> >> >> >> >> >> >> >> >> >> >> *********************************************************************
+>> Constraint matrices
+>> *********************************************************************
+>> 	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 11344
+		             equality = 392
+		           inequality = 10952
+		number of variables = 98197
+		            integer = 0
+		             binary = 98000
+		         continuous = 197
+>> >> >> *********************************************************************
+>> Solving with CPLEX
+>> *********************************************************************
+>> Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5424 rows and 77874 columns...
+Presolve has improved bounds 75747 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 6844 rows and 77874 columns.
+MIP Presolve modified 2257444 coefficients.
+Reduced MIP has 4500 rows, 20323 columns, and 964138 nonzeros.
+Reduced MIP has 20322 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 15.38 sec. (30948.47 ticks)
+Found incumbent of value 10898.484527 after 16.66 sec. (32183.67 ticks)
+Probing fixed 0 vars, tightened 2 bounds.
+Probing time = 0.05 sec. (19.09 ticks)
+Cover probing fixed 0 vars, tightened 2 bounds.
+Tried aggregator 1 time.
+Reduced MIP has 4500 rows, 20323 columns, and 964138 nonzeros.
+Reduced MIP has 20322 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.09 sec. (560.36 ticks)
+Probing time = 0.02 sec. (14.20 ticks)
+Cover probing fixed 0 vars, tightened 1 bounds.
+Clique table members: 196.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.94 sec. (1104.13 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                        10898.4845      -73.9947           100.68%
+*     0+    0                          142.4060      -73.9947           151.96%
+      0     0       46.3676   304      142.4060       46.3676     1898   67.44%
+*     0+    0                           83.7353       46.3676            44.63%
+*     0+    0                           51.0572       46.3676             9.19%
+*     0+    0                           47.9808       46.3676             3.36%
+      0     2       46.3677   304       47.9808       46.3676     1899    3.36%
+Elapsed time = 24.81 sec. (38534.63 ticks, tree = 0.01 MB, solutions = 5)
+*  4796+ 2534                           47.8882       46.5065             2.89%
+*  4796+ 1689                           47.5997       46.6574             1.98%
+*  4796+ 1125                           47.5572       47.0626             1.04%
+*  4796+  749                           47.5083       47.1326             0.79%
+*  4796+  498                           47.4879       47.3685             0.25%
+   4796   497        cutoff             47.4879       47.4879    25907    0.00%
+GUB cover cuts applied:  42
+Clique cuts applied:  11
+Cover cuts applied:  6
+Implied bound cuts applied:  1
+Flow cuts applied:  2
+Mixed integer rounding cuts applied:  4
+
+Root node processing (before b&c):
+  Real time             =   24.25 sec. (38464.14 ticks)
+Parallel b&c, 20 threads:
+  Real time             =   31.18 sec. (21467.80 ticks)
+  Sync time (average)   =    3.76 sec.
+  Wait time (average)   =    0.19 sec.
+                          ------------
+Total (root+branch&cut) =   55.44 sec. (59931.94 ticks)
+>> exit status =  1
+>> solution time =  55.445119
+>> >> >> *********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	error: Two adjacent power assemblies violate the maximum temperature gradient in step 1
+	Checked : 	WARNING : 1 errors on constraints found during post-processing
+>> 	Saving workspace
+>> >> >> *********************************************************************
+>> END OF SCRIPT
+>> *********************************************************************
+>> >> >> >> 

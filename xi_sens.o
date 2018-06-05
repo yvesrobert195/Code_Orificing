@@ -1,0 +1,869 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> *********************************************************************
+>> ORIFICE ITERATION TIME SCRIPT
+>> 25-May-2018 09:49:38>> 
+*********************************************************************
+>> Reading input
+>> >> >> >> >> >> >> >> 
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 10
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 235.938033 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 74510 columns...
+Presolve has improved bounds 72860 times...
+Row 'c786' infeasible, all entries at implied bounds.
+Presolve time = 16.20 sec. (32567.13 ticks)
+
+Root node processing (before b&c):
+  Real time             =   16.71 sec. (32731.50 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   16.71 sec. (32731.50 ticks)
+exit status = -2
+solution time =  16.723078
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 15
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 231.136477 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 72026 columns...
+Presolve has improved bounds 70377 times...
+Row 'c1880' infeasible, all entries at implied bounds.
+Presolve time = 15.65 sec. (32617.22 ticks)
+
+Root node processing (before b&c):
+  Real time             =   16.16 sec. (32780.53 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   16.16 sec. (32780.53 ticks)
+exit status = -2
+solution time =  16.161503
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 20
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 229.471382 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 72087 columns...
+Presolve has improved bounds 70438 times...
+Row 'c2388' infeasible, all entries at implied bounds.
+Presolve time = 15.65 sec. (32616.50 ticks)
+
+Root node processing (before b&c):
+  Real time             =   16.17 sec. (32778.99 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   16.17 sec. (32778.99 ticks)
+exit status = -2
+solution time =  16.172526
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 25
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 229.506633 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71942 columns...
+Presolve has improved bounds 70293 times...
+Infeasibility row 'c17':  0  = -1.
+Presolve time = 15.62 sec. (32617.05 ticks)
+
+Root node processing (before b&c):
+  Real time             =   16.13 sec. (32778.86 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   16.13 sec. (32778.86 ticks)
+exit status = -2
+solution time =  16.132934
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 30
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 202.469328 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71812 columns...
+Presolve has improved bounds 70163 times...
+Constraints 'c82' and 'c2303' are inconsistent.
+Presolve time = 15.76 sec. (32713.32 ticks)
+
+Root node processing (before b&c):
+  Real time             =   16.27 sec. (32874.47 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   16.27 sec. (32874.47 ticks)
+exit status = -2
+solution time =  16.274724
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 35
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 199.533125 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71684 columns...
+Presolve has improved bounds 70035 times...
+Row 'c2628' infeasible, all entries at implied bounds.
+Presolve time = 18.20 sec. (35534.49 ticks)
+
+Root node processing (before b&c):
+  Real time             =   18.70 sec. (35695.01 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   18.70 sec. (35695.01 ticks)
+exit status = -2
+solution time =  18.704074
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 40
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 199.109177 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71567 columns...
+Presolve has improved bounds 69918 times...
+Row 'c2316' infeasible, all entries at implied bounds.
+Presolve time = 17.46 sec. (35570.23 ticks)
+
+Root node processing (before b&c):
+  Real time             =   17.96 sec. (35730.14 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   17.96 sec. (35730.14 ticks)
+exit status = -2
+solution time =  17.963976
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 45
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 199.149041 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71461 columns...
+Presolve has improved bounds 69812 times...
+Constraints 'c82' and 'c2303' are inconsistent.
+Presolve time = 17.76 sec. (36225.94 ticks)
+
+Root node processing (before b&c):
+  Real time             =   18.27 sec. (36385.29 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   18.27 sec. (36385.29 ticks)
+exit status = -2
+solution time =  18.273219
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 50
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 198.872233 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71369 columns...
+Presolve has improved bounds 69720 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 80745 rows and 73722 columns.
+MIP Presolve modified 2574612 coefficients.
+Reduced MIP has 28268 rows, 24974 columns, and 1036722 nonzeros.
+Reduced MIP has 24618 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 20.42 sec. (40255.45 ticks)
+Probing time = 0.23 sec. (17.40 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 28268 rows, 24974 columns, and 1036722 nonzeros.
+Reduced MIP has 24974 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.08 sec. (632.76 ticks)
+Probing time = 0.04 sec. (17.12 ticks)
+Clique table members: 101927.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 17.49 sec. (12294.37 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          357.0000        0.0000           100.00%
+*     0+    0                          109.0000        0.0000           100.00%
+      0     0       15.2846   879      109.0000       15.2846    70229   85.98%
+*     0+    0                           31.0000       15.2846            50.69%
+      0     0       16.8630  1167       31.0000     Cuts: 257    71857   45.60%
+      0     0       17.4099  1330       31.0000     Cuts: 128    72823   43.84%
+      0     0       17.7308  1485       31.0000     Cuts: 128    73656   42.80%
+*     0+    0                           29.0000       17.7308            38.86%
+*     0+    0                           25.0000       17.7308            29.08%
+      0     0       17.9776  1650       25.0000     Cuts: 127    74395   28.09%
+      0     0       18.1336  1652       25.0000      Cuts: 88    74964   27.47%
+      0     0       18.2200  1680       25.0000      Cuts: 69    75373   27.12%
+      0     0       18.3237  1732       25.0000      Cuts: 60    75853   26.71%
+      0     0       18.4189  1777       25.0000      Cuts: 32    76373   26.32%
+      0     0       18.4910  1827       25.0000      Cuts: 52    76829   26.04%
+      0     0       18.5576  1856       25.0000      Cuts: 47    77199   25.77%
+      0     0       18.6278  1840       25.0000      Cuts: 65    77574   25.49%
+      0     0       18.7114  1885       25.0000      Cuts: 43    78041   25.15%
+      0     0       18.7720  1949       25.0000      Cuts: 47    78400   24.91%
+      0     0       18.8010  1889       25.0000      Cuts: 41    78684   24.80%
+      0     0       18.8156  1883       25.0000      Cuts: 38    78913   24.74%
+      0     0       18.8375  1850       25.0000      Cuts: 14    79122   24.65%
+      0     0       18.8580  1909       25.0000      Cuts: 33    79358   24.57%
+      0     0       18.8728  1895       25.0000      Cuts: 15    79480   24.51%
+      0     0       18.8779  1875       25.0000      Cuts: 14    79651   24.49%
+      0     0       18.8832  1879       25.0000      Cuts: 12    79765   24.47%
+      0     0       18.8889  1866       25.0000       Cuts: 9    79914   24.44%
+      0     0       18.9007  1925       25.0000      Cuts: 21    80116   24.40%
+      0     0       18.9187  1926       25.0000      Cuts: 14    80303   24.33%
+      0     0       18.9280  1929       25.0000      Cuts: 12    80481   24.29%
+      0     0       18.9322  1959       25.0000      Cuts: 14    80604   24.27%
+      0     0       18.9393  1978       25.0000      Cuts: 10    80730   24.24%
+      0     0       18.9426  1957       25.0000      Cuts: 11    80815   24.23%
+Heuristic still looking.
+      0     2       18.9426  1957       25.0000       18.9426    80815   24.23%
+Elapsed time = 116.22 sec. (111887.56 ticks, tree = 0.01 MB, solutions = 5)
+      2     4       18.9954  1847       25.0000       18.9427    81577   24.23%
+      9     7       19.0647  1850       25.0000       18.9959    83798   24.02%
+    738   504       22.1278   825       25.0000       19.1604   371761   23.36%
+   1676  1251       19.8936  1869       25.0000       19.1905   807093   23.24%
+   2124  1531       20.0659  1115       25.0000       19.2153   936913   23.14%
+   2323  1650       20.7190   836       25.0000       19.2153  1024668   23.14%
+   2510  1729       21.8565   176       25.0000       19.2153  1095634   23.14%
+   4233  2935        cutoff             25.0000       19.2598  1919050   22.96%
+   4766  3262       19.2541  1931       25.0000       19.4189  2201997   22.32%
+   4803    29       19.5870  1888       25.0000       19.4189  2221433   22.32%
+   6625  1608       20.0086  1549       25.0000       19.4189  3208722   22.32%
+   7712  2315       21.1129  1240       25.0000       19.4189  3612333   22.32%
+   8211  2608       21.8772   441       25.0000       19.4189  3785868   22.32%
+   8275  2787       22.8723   780       25.0000       19.4189  3851768   22.32%
+  10174  3950       23.5145   474       25.0000       19.4189  4438382   22.32%
+  16751  9414       21.7604  1312       25.0000       19.6218  6244081   21.51%
+  17642 10729       22.4334   979       25.0000       19.6218  6623695   21.51%
+  20909 13536       21.1988  1155       25.0000       19.6233  7329021   21.51%
+  21024 14370       21.8189   918       25.0000       19.6233  7576453   21.51%
+  22066 14454       21.5192  1201       25.0000       19.7469  7603143   21.01%
+  25391 12655       22.3818  1169       24.0000       19.8777  8485280   17.18%
+Elapsed time = 1539.68 sec. (811544.75 ticks, tree = 151.23 MB, solutions = 8)
+  27284 14189       21.9347   847       24.0000       19.9257  8924964   16.98%
+  28245 14683       21.6298   900       24.0000       19.9495  9072966   16.88%
+  28920 16225       22.0236  1163       24.0000       19.9820  9469059   16.74%
+  35568 21700       22.7477   947       24.0000       20.0869 11113078   16.30%
+  41162 26111       20.7198  1529       24.0000       20.1314 12474040   16.12%
+Elapsed time = 2150.80 sec. (1080550.55 ticks, tree = 322.01 MB, solutions = 8)
+  43603 29076       21.0754  1337       24.0000       20.1615 13418489   15.99%
+  43915 28309       21.5228  1137       24.0000       20.1642 13205198   15.98%
+  46277 14957       21.1722  1659       23.0000       20.1831 13862205   12.25%
+  46779 15505       21.8657  1509       23.0000       20.1890 14164379   12.22%
+  49396 17288        cutoff             23.0000       20.2229 14892515   12.07%
+  51135 19814       19.4113  2063       23.0000       20.2495 15925050   11.96%
+  51143  9911       19.5120  2004       23.0000       20.2495 15927625   11.96%
+  51155  3156       20.3536  1825       23.0000       20.2495 15933202   11.96%
+Elapsed time = 2807.91 sec. (1527927.59 ticks, tree = 39.81 MB, solutions = 9)
+  52078   639       21.3026  1058       23.0000       20.2495 16582057   11.96%
+  53085  1223       21.4509  1137       23.0000       20.2495 17045696   11.96%
+  53292  1351       21.6087   977       23.0000       20.2495 17154866   11.96%
+Elapsed time = 3035.61 sec. (1644277.95 ticks, tree = 22.42 MB, solutions = 9)
+  59087  5785       21.8564   895       23.0000       20.2495 19310750   11.96%
+  60931  7132       21.9893   844       23.0000       20.3295 20079222   11.61%
+  62418  8340       21.6802  1173       23.0000       20.3720 20844772   11.43%
+  64371  9742       21.8873  1529       23.0000       20.4226 21693957   11.21%
+  68374 12348        cutoff             23.0000       20.5238 23632139   10.77%
+  68457 12479       21.9141  1035       23.0000       20.5285 23754145   10.75%
+  70408 13696       20.9358  1218       23.0000       20.5710 24661153   10.56%
+  71350 14240        cutoff             23.0000       20.5940 25136278   10.46%
+Elapsed time = 4373.97 sec. (2338319.22 ticks, tree = 172.68 MB, solutions = 9)
+  74259 16006       21.9557  1026       23.0000       20.6450 26594909   10.24%
+  75531 16502       21.3416   941       23.0000       20.6769 27110389   10.10%
+  76382 17059       21.8166  1049       23.0000       20.6884 27623021   10.05%
+  80138 18968       21.6100   651       23.0000       20.7754 29479596    9.67%
+  83188 20642       21.2843  1452       23.0000       20.8281 31235649    9.44%
+  85034 21482       21.7431  1111       23.0000       20.8681 32130068    9.27%
+  85502 21531        cutoff             23.0000       20.8775 32185041    9.23%
+  86080 22137       21.9149  1349       23.0000       20.8889 32893973    9.18%
+  87741 22698       21.8241  1213       23.0000       20.9147 33565931    9.07%
+  88960 23348       21.8796  1198       23.0000       20.9324 34202612    8.99%
+  89892 23950       21.4638  1497       23.0000       20.9457 34721393    8.93%
+  90269 24168       21.9557  1479       23.0000       20.9515 34881648    8.91%
+  93397 25507       21.8163   975       23.0000       20.9966 36461778    8.71%
+  94128 25827        cutoff             23.0000       21.0066 36927102    8.67%
+  95572 26292       21.7974  1012       23.0000       21.0307 37484462    8.56%
+  95769 26461       21.6852  1269       23.0000       21.0341 37763000    8.55%
+  95857 26225       21.9885  1304       23.0000       21.0353 37409843    8.54%
+  96162 26360       21.7571  1397       23.0000       21.0410 37606466    8.52%
+  98486 27518       21.8769  1168       23.0000       21.0779 39132972    8.36%
+ 101586 28662       21.8030  1337       23.0000       21.1197 40659547    8.18%
+ 103036 28837       21.9076  1477       23.0000       21.1435 40945092    8.07%
+ 112315 31093        cutoff             23.0000       21.2609 45336270    7.56%
+ 135009 27645       21.8920   769       23.0000       21.5291 54879624    6.40%
+ 137553 26315        cutoff             23.0000       21.5606 55621808    6.26%
+ 150466 16493        cutoff             23.0000       21.7153 58946240    5.59%
+GUB cover cuts applied:  339
+Clique cuts applied:  28
+Cover cuts applied:  1143
+Flow cuts applied:  5
+Mixed integer rounding cuts applied:  135
+Zero-half cuts applied:  66
+Lift and project cuts applied:  15
+
+Root node processing (before b&c):
+  Real time             =  114.55 sec. (110459.12 ticks)
+Parallel b&c, 20 threads:
+  Real time             = 9551.84 sec. (4675952.48 ticks)
+  Sync time (average)   = 1361.48 sec.
+  Wait time (average)   =    0.63 sec.
+                          ------------
+Total (root+branch&cut) = 9666.39 sec. (4786411.60 ticks)
+exit status =  1
+solution time =  9666.421738
+*********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	error: Two adjacent blanket assemblies violate the maximum temperature gradient in step 1
+	error: Two adjacent blanket assemblies violate the maximum temperature gradient in step 4
+	Checked : 	WARNING : 2 errors on constraints found during post-processing
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.xi_power = 55
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 199.934094 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 71295 columns...
+Presolve has improved bounds 69646 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 79419 rows and 72559 columns.
+MIP Presolve modified 2576500 coefficients.
+Reduced MIP has 29611 rows, 26137 columns, and 1099174 nonzeros.
+Reduced MIP has 25781 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 20.18 sec. (38819.89 ticks)
+Probing time = 0.08 sec. (17.96 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 29611 rows, 26137 columns, and 1099174 nonzeros.
+Reduced MIP has 26137 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.17 sec. (677.37 ticks)
+Probing time = 0.03 sec. (17.59 ticks)
+Clique table members: 97937.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 26.21 sec. (18764.98 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        8.0041  1069                      8.0041    83477         
+      0     0        8.7435  1455                   Cuts: 447    85221         
+      0     0        9.0978  2000                   Cuts: 175    86590         
+      0     0        9.2614  2066                    Cuts: 98    87806         
+      0     0        9.3423  2233                    Cuts: 66    88642         
+      0     0        9.3807  2387                    Cuts: 50    89221         
+      0     0        9.4012  2514                    Cuts: 45    89746         
+      0     0        9.4205  2625                    Cuts: 44    90151         
+      0     0        9.4299  2667                    Cuts: 35    90534         
+      0     0        9.4476  2714                    Cuts: 33    91143         
+      0     0        9.4635  2731                    Cuts: 43    91834         
+      0     0        9.4739  2706                    Cuts: 19    92133         
+*     0+    0                           99.0000        9.4739            90.43%
+      0     0        9.4825  2513       99.0000      Cuts: 28    92476   90.42%
+*     0+    0                           57.0000        9.4825            83.36%
+*     0+    0                           44.0000        9.4825            78.45%
+*     0+    0                           43.0000        9.4825            77.95%
+      0     0        9.4887  2564       43.0000      Cuts: 14    92738   77.93%
+      0     0        9.4913  2566       43.0000      Cuts: 10    92945   77.93%
+      0     0        9.5000  2728       43.0000      Cuts: 16    93372   77.91%
+      0     0        9.5077  2774       43.0000      Cuts: 24    93715   77.89%
+      0     0        9.5143  2937       43.0000      Cuts: 53    94061   77.87%
+      0     0        9.5196  3041       43.0000      Cuts: 34    94402   77.86%
+      0     0        9.5228  2873       43.0000      Cuts: 11    94628   77.85%
+      0     0        9.5243  2867       43.0000       Cuts: 9    94783   77.85%
+      0     0        9.5259  2931       43.0000       Cuts: 9    94958   77.85%
+Heuristic still looking.
+      0     2        9.5259  2931       43.0000        9.5259    94958   77.85%
+Elapsed time = 135.42 sec. (134236.14 ticks, tree = 0.01 MB, solutions = 4)
+      1     3        9.5300  2873       43.0000        9.5259    95219   77.85%
+      2     3        9.6663  2530       43.0000        9.5259    96240   77.85%
+      3     4        9.5502  2901       43.0000        9.5259    95551   77.85%
+      4     5        9.8234  2664       43.0000        9.5301    97250   77.84%
+      5     6        9.5972  2785       43.0000        9.5301    97367   77.84%
+     12     6        9.7269  2671       43.0000        9.5301    97973   77.84%
+    307   214       11.9265  2243       43.0000        9.6309   292432   77.60%
+    344   254       13.0728  2197       43.0000        9.6309   319136   77.60%
+    901   676       10.9565   996       43.0000        9.6309   614074   77.60%
+   1069   852       14.2517   421       25.0000        9.6309   715811   61.48%
+   1854  1371       10.5993  1850       24.0000        9.6309   993777   59.87%
+   4246  2408       15.8833   750       19.0000        9.6309  1548468   49.31%
+   4794  3157        9.9060  3203       19.0000        9.9060  1988237   47.86%
+   4796  3158       10.5920  2683       19.0000        9.9062  1990437   47.86%
+   5771   899        cutoff             19.0000       10.0121  2571192   47.30%
+   6832  1638       14.2936   265       19.0000       10.0121  3046572   47.30%
+Elapsed time = 897.50 sec. (561078.66 ticks, tree = 23.27 MB, solutions = 8)
+*  9015+ 3461                           18.0000       10.0121            44.38%
+  11169  4533       14.7767   487       18.0000       10.2119  4894650   43.27%
+  14123  5700       13.2826   358       16.0000       10.2313  6366862   36.05%
+  19100 10378       14.3425   873       16.0000       10.2925  7980241   35.67%
+  19640 10818        cutoff             16.0000       10.2925  8139344   35.67%
+  21640 12029       13.5497   356       16.0000       10.4523  8539938   34.67%
+  29165 16501       12.5408  1030       15.0000       10.5823 10567279   29.45%
+  29325 17222       13.6828   207       15.0000       10.5823 10765091   29.45%
+  31715 17497       11.8140  1517       15.0000       10.5946 10862047   29.37%
+  34048 20521       13.3490  1044       15.0000       10.6045 11439092   29.30%
+  38870 26187       13.4682   318       15.0000       10.6236 12702718   29.18%
+  41388 27781       13.0215   399       15.0000       10.6236 13269494   29.18%
+  49573 35473       11.5418  2258       15.0000       10.6459 14999407   29.03%
+  50618 37399       11.9587   641       15.0000       10.6676 15364623   28.88%
+Elapsed time = 3062.33 sec. (1490555.57 ticks, tree = 449.01 MB, solutions = 12)
+  52998 38766       13.7218   702       15.0000       10.6676 15698741   28.88%
+  56997 42413       11.3793  1033       15.0000       10.6676 16505928   28.88%
+  58106 43990       13.3648   738       15.0000       10.6676 16871172   28.88%
+Elapsed time = 3363.69 sec. (1605405.57 ticks, tree = 520.20 MB, solutions = 12)
+  60097 46346       13.2067   780       15.0000       10.6684 17395007   28.88%
+  60922 46372       11.6908  2287       15.0000       10.6684 17418306   28.88%
+  65139 32307       12.2590  1128       14.0000       10.7083 18077496   23.51%
+  67594 34074    infeasible             14.0000       10.7127 18628278   23.48%
+  68496 34941       11.4275   998       14.0000       10.7228 18876758   23.41%
+  74473 40454       11.6262  1161       14.0000       10.7437 20270786   23.26%
+  74692 42524       12.1730  1433       14.0000       10.7437 20807267   23.26%
+  75327 42647       11.7603  1264       14.0000       10.7437 20862421   23.26%
+  76124 42714       11.7728  1584       14.0000       10.7507 20899177   23.21%
+  77860 43046       11.6099  1570       14.0000       10.7578 21014817   23.16%
+  84249 49562       11.7126  1313       14.0000       10.7794 22699394   23.00%
+  86524 51299       12.7117  1008       14.0000       10.7794 23198852   23.00%
+  91287 56931       12.9830   772       14.0000       10.8048 24368659   22.82%
+ 109241 71202       11.6645  1910       14.0000       10.8443 26929976   22.54%
+ 112626 76244       12.0272  1147       14.0000       10.8540 27737900   22.47%
+Elapsed time = 5762.98 sec. (2488215.46 ticks, tree = 5791.29 MB, solutions = 13)
+Nodefile size = 3743.83 MB (1979.22 MB after compression)
+ 117159 81404       11.8562  1082       14.0000       10.8678 28751515   22.37%
+ 124131 85162       12.2157  1029       14.0000       10.8806 29496211   22.28%
+ 130507 90761       12.2900   953       14.0000       10.8953 30512418   22.18%
+ 142011 103506       11.3744  2104       14.0000       10.9154 32806743   22.03%
+ 161936 119864       11.8852  1000       14.0000       10.9379 36102975   21.87%
+ 181450 138309       12.1204  2013       14.0000       10.9662 39735901   21.67%
+ 181453 140856       10.0000  3371       14.0000       10.9702 40285612   21.64%
+Elapsed time = 9390.53 sec. (3972872.71 ticks, tree = 2047.34 MB, solutions = 13)
+ 182129   353        cutoff             14.0000       10.9702 40916638   21.64%
+ 182593   581       12.6354   551       14.0000       10.9702 41267530   21.64%
+ 187310  4253       12.4748  1522       14.0000       10.9702 43618606   21.64%
+ 197630 13722       11.8905  1487       14.0000       10.9702 48565772   21.64%
+ 197859 13811       11.7288  1394       14.0000       10.9702 48615655   21.64%
+ 225026 37760       12.3372  1456       14.0000       10.9702 62387915   21.64%
+ 238852 49319        cutoff             14.0000       10.9702 67947062   21.64%
+ 268137 74844       12.9100  1325       14.0000       11.0604 82056428   21.00%
+Elapsed time = 18892.48 sec. (8356371.54 ticks, tree = 957.70 MB, solutions = 13)
+ 282849 88023       12.7319  1289       14.0000       11.0986 86139425   20.72%
+ 283652 88526       12.2091  1478       14.0000       11.1095 86372411   20.65%
+ 294531 94489       12.8990  1299       14.0000       11.1406 88659299   20.42%
+ 296461 95547       11.9616  1343       14.0000       11.1460 89064033   20.39%
+ 297966 99786       12.5246   867       14.0000       11.1460 90138658   20.39%
+ 299727 102581       12.4756  1242       14.0000       11.1523 90984826   20.34%
+ 315404 112800       12.1661  1424       14.0000       11.1848 95466310   20.11%
+ 320680 120579       12.1341  1578       14.0000       11.1939 97446077   20.04%
+ 325015 123838       12.6497  1286       14.0000       11.2086 98748944   19.94%
+ 325262 125178       12.2400  1609       14.0000       11.2086 99286556   19.94%
+ 332700 127931       12.7488  1600       14.0000       11.2134 1.00e+08   19.90%
+ 342609 140291       12.0131  1462       14.0000       11.2360 1.04e+08   19.74%
+ 344880 141181       12.8011  1278       14.0000       11.2372 1.05e+08   19.73%
+ 345256 141526       12.7334   802       14.0000       11.2372 1.05e+08   19.73%
+ 383684 175557       12.8171   498       14.0000       11.3085 1.18e+08   19.23%
+ 417619 202088       12.7258   255       14.0000       11.3485 1.29e+08   18.94%
+Elapsed time = 34081.55 sec. (14631688.56 ticks, tree = 25815.56 MB, solutions = 13)
+Nodefile size = 23767.58 MB (12955.10 MB after compression)
+ 418182 203843       12.1113   860       14.0000       11.3491 1.29e+08   18.93%
+ 419545 205958       12.8108   977       14.0000       11.3513 1.30e+08   18.92%
+ 430680 214874       12.0585  2447       14.0000       11.3645 1.34e+08   18.82%
+ 435770 218182       11.5550  1761       14.0000       11.3671 1.36e+08   18.81%
+ 439182 218609       12.9871  1104       14.0000       11.3722 1.36e+08   18.77%
+ 449929 230820       12.2225  1226       14.0000       11.3834 1.41e+08   18.69%
+ 453660 233229       12.9407   397       14.0000       11.3888 1.42e+08   18.65%
+Elapsed time = 38539.15 sec. (16469213.44 ticks, tree = 32292.71 MB, solutions = 13)
+Nodefile size = 30245.63 MB (16553.30 MB after compression)
+ 453877 233632       12.8269  1608       14.0000       11.3888 1.43e+08   18.65%
+ 457096 236773        cutoff             14.0000       11.3924 1.44e+08   18.63%
+ 472225 245104       12.8768   695       14.0000       11.4059 1.49e+08   18.53%
+ 474642 250564       12.8987  1237       14.0000       11.4086 1.50e+08   18.51%
+ 487612 262003       12.6633  1912       14.0000       11.4249 1.56e+08   18.39%
+ 493095 264797       12.7827  2128       14.0000       11.4312 1.58e+08   18.35%
+ 493731 264244       12.7464   977       14.0000       11.4313 1.57e+08   18.35%
+ 497607 269675        cutoff             14.0000       11.4341 1.60e+08   18.33%
+ 503111 273308       11.8648  2754       14.0000       11.4410 1.61e+08   18.28%
+ 515525 283083       12.9786  1364       14.0000       11.4526 1.67e+08   18.20%
+ 522043 286623       11.9274  1931       14.0000       11.4594 1.69e+08   18.15%
+ 527202 293297       12.9209  1364       14.0000       11.4645 1.72e+08   18.11%
+ 529982 295565       12.6023  1544       14.0000       11.4686 1.73e+08   18.08%
+ 530242 295049        cutoff             14.0000       11.4690 1.73e+08   18.08%
+ 533494 297481       12.2816  1819       14.0000       11.4732 1.74e+08   18.05%
+ 539473 302868       12.5570  2156       14.0000       11.4768 1.77e+08   18.02%
+ 540472 303327       12.6429  1586       14.0000       11.4768 1.77e+08   18.02%
+ 540991 303264        cutoff             14.0000       11.4769 1.77e+08   18.02%
+ 557016 317467       12.3401  1134       14.0000       11.4925 1.83e+08   17.91%
+ 562912 322516       12.6208  1447       14.0000       11.4995 1.86e+08   17.86%
+ 563670 321375       12.2610   992       14.0000       11.4995 1.85e+08   17.86%
+ 566643 325063        cutoff             14.0000       11.5026 1.87e+08   17.84%
+ 576638 332424       12.1616  2008       14.0000       11.5133 1.91e+08   17.76%
+Elapsed time = 54001.16 sec. (22901383.47 ticks, tree = 52356.68 MB, solutions = 13)
+Nodefile size = 50309.19 MB (27681.17 MB after compression)
+ 590995 344245       12.9361  1342       14.0000       11.5235 1.96e+08   17.69%
+ 592219 345021       12.9287  1406       14.0000       11.5255 1.97e+08   17.68%
+ 592448 345797       12.7097  1590       14.0000       11.5255 1.97e+08   17.68%
+ 597755 349494       12.4998   965       14.0000       11.5297 1.99e+08   17.64%
+ 601703 351867       12.4148  1226       14.0000       11.5354 2.01e+08   17.60%
+ 603927 354290       12.4426  1123       14.0000       11.5373 2.02e+08   17.59%
+ 607755 356630        cutoff             14.0000       11.5401 2.03e+08   17.57%
+ 611644 360068       12.6627  2004       14.0000       11.5440 2.05e+08   17.54%
+ 612159 360716       12.6593  1114       14.0000       11.5446 2.06e+08   17.54%
+ 613611 361374       12.6732  1075       14.0000       11.5458 2.06e+08   17.53%
+ 619696 363988       12.9135  1899       14.0000       11.5487 2.08e+08   17.51%
+ 627666 372359       12.2027  1291       14.0000       11.5567 2.11e+08   17.45%
+ 638496 382228       12.4200  1059       14.0000       11.5654 2.17e+08   17.39%
+ 639240 381825       12.7810  1091       14.0000       11.5654 2.17e+08   17.39%
+Elapsed time = 62299.09 sec. (26270238.83 ticks, tree = 62759.38 MB, solutions = 13)
+Nodefile size = 60711.98 MB (33471.73 MB after compression)
+ 650961 388840       12.2142  1570       14.0000       11.5741 2.21e+08   17.33%
+ 656201 395737       12.4874  1880       14.0000       11.5774 2.24e+08   17.30%
+ 658703 397265       11.8111  1993       14.0000       11.5786 2.25e+08   17.30%
+ 660452 398690       12.8764   872       14.0000       11.5813 2.26e+08   17.28%
+ 664461 402175       12.4653  1622       14.0000       11.5843 2.28e+08   17.26%
+ 665447 401928       12.6726  1532       14.0000       11.5850 2.28e+08   17.25%
+ 671242 405688       12.5130  1364       14.0000       11.5890 2.30e+08   17.22%
+ 681018 415058       12.4610  1755       14.0000       11.5953 2.36e+08   17.18%
+ 684190 416644       12.6446  1437       14.0000       11.5978 2.37e+08   17.16%
+ 687260 418970       12.6311   675       14.0000       11.5995 2.38e+08   17.15%
+ 693501 423617       12.2033  2718       14.0000       11.6040 2.41e+08   17.11%
+ 693918 425128       11.7483  1470       14.0000       11.6040 2.42e+08   17.11%
+ 695115 425930       12.8606  1104       14.0000       11.6068 2.42e+08   17.09%
+ 698974 428856       12.6860  1006       14.0000       11.6080 2.44e+08   17.09%
+ 716292 440757       12.7566  1663       14.0000       11.6217 2.50e+08   16.99%
+ 717324 442887       12.6768  1485       14.0000       11.6225 2.51e+08   16.98%
+ 728733 450188       12.3890  1524       14.0000       11.6322 2.56e+08   16.91%
+ 734690 454758       12.7826   790       14.0000       11.6370 2.58e+08   16.88%
+ 738646 458434       12.8304  1177       14.0000       11.6402 2.61e+08   16.86%
+ 750281 465953        cutoff             14.0000       11.6493 2.66e+08   16.79%
+ 753272 469762       12.5184  1624       14.0000       11.6513 2.68e+08   16.78%
+ 760120 475143       12.1036  1397       14.0000       11.6559 2.71e+08   16.74%
+ 765461 479089       12.6477  1473       14.0000       11.6598 2.73e+08   16.72%
+ 780293 489567       12.5882   846       14.0000       11.6666 2.78e+08   16.67%
+ 789598 497149       12.4846  1507       14.0000       11.6751 2.83e+08   16.61%
+ 798078 502630       12.9843   858       14.0000       11.6804 2.86e+08   16.57%
+ 798348 503771       12.2890   932       14.0000       11.6810 2.87e+08   16.56%
+Elapsed time = 85015.44 sec. (35459993.31 ticks, tree = 89592.42 MB, solutions = 13)
+Nodefile size = 87544.73 MB (48462.05 MB after compression)
+ 800195 505363       12.5945  1931       14.0000       11.6822 2.88e+08   16.56%
