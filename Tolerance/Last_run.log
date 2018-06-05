@@ -1,0 +1,257 @@
+Reading input
+%% Files
+addpath(genpath('/global/home/users/yvesrobert/CPLEX/cplex/matlab/x86-64_linux'));
+Input.path='/global/home/users/yvesrobert/pop_neutrons/four_BU/';
+%Input.path='/global/home/users/yvesrobert/pop_neutrons/bnb/';
+Input.Core='A'; % Name of the core : A, bnb, A_one_row...
+  Input.names={'det0';'det1';'det2';'det3'};  % det files to study
+Pb.Var.x=linspace(1e-2,100,200);
+Pb.Constraints.tol=(Pb.Var.x(2)-Pb.Var.x(1))-1e-4;
+
+
+%% Initialization
+fprintf('*********************************************************************\n')
+*********************************************************************
+fprintf('Initialization\n')
+Initialization
+fprintf('*********************************************************************\n')
+*********************************************************************
+% Assign geometry
+fprintf('\tReading geometry\n')
+	Reading geometry
+Geometry=geometry(Input.Core);
+
+% Reads det files
+fprintf('\tReading power data\n')
+	Reading power data
+Input.Q = readQ(Input.powerDetectorFiles);
+Input.lengthQ_original = length(Input.Q);
+[Input.Q, Input.map] = formMap(Input.Q, Input.assemblyPowerThreshold);
+Input.Q_ave = sum(Input.Q,2)/length(Input.powerDetectorFiles); % divide by number of steps to get average assembly power over cycle
+
+fprintf('\tManipulating data\n');
+	Manipulating data
+Pb.Var.nass = length(Input.Q_ave); % number of assemblies in problem
+Pb.Var.nsteps = length(Input.powerDetectorFiles);
+Pb.Var.npossflows = length(Pb.Var.x); % number of possible flowrates specified as data
+Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % number of total variables
+
+% Build tables of coolant properties and temperature
+fprintf('\tBuilding coolant properties and temperature tables\n')
+	Building coolant properties and temperature tables
+Coolant=coolant_properties('sodium',Input,Pb,Geometry);
+
+% Find which assemblies have adjacents and how many adjacent pairs
+Input.adjacentAssemblies = findAdjacentAssemblies(Pb.Var.nass, Input.map, Input.lengthQ_original);
+Input.nadj = nnz(Input.adjacentAssemblies); % number of adjacent assembly pairs
+
+% Read and create rings
+Geometry.rings=find_rings(Input.adjacentAssemblies);
+
+% Create constraints
+fprintf('*********************************************************************\n')
+*********************************************************************
+fprintf('Constraint matrices\n')
+Constraint matrices
+fprintf('*********************************************************************\n')
+*********************************************************************
+Pb=make_constraints_tolerance(Pb,Input,Coolant,Geometry);
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 50936
+		             equality = 196
+		           inequality = 50740
+		number of variables = 39596
+		            integer = 0
+		             binary = 39200
+		         continuous = 396
+
+% Solve
+fprintf('*********************************************************************\n')
+*********************************************************************
+fprintf('Solving with CPLEX\n');
+Solving with CPLEX
+fprintf('*********************************************************************\n')
+*********************************************************************
+[Solution.solutionvector, Solution.objval, Solution.status, Solution.output] = cplexmilp(Pb.CPLEX.c, Pb.CPLEX.Aineq, Pb.CPLEX.bineq, Pb.CPLEX.Aeq, Pb.CPLEX.beq, [], [], [], [], [], Pb.CPLEX.ctype,[],Pb.CPLEX.opts);
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 6455 rows and 12808 columns...
+Presolve has improved bounds 12258 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 24594 rows and 17078 columns.
+MIP Presolve modified 1537911 coefficients.
+Reduced MIP has 26004 rows, 22518 columns, and 863986 nonzeros.
+Reduced MIP has 22320 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 12.76 sec. (21780.99 ticks)
+Found incumbent of value 88.000000 after 13.84 sec. (22651.49 ticks)
+Probing time = 0.09 sec. (17.46 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1 coefficients.
+Reduced MIP has 26004 rows, 22518 columns, and 863986 nonzeros.
+Reduced MIP has 22518 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.83 sec. (559.37 ticks)
+Probing time = 0.04 sec. (17.19 ticks)
+Clique table members: 98307.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 1.50 sec. (1384.57 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           88.0000        0.0000           100.00%
+*     0+    0                           81.0000        0.0000           100.00%
+*     0+    0                           80.0000        0.0000           100.00%
+*     0+    0                           79.0000        0.0000           100.00%
+*     0+    0                           78.0000        0.0000           100.00%
+*     0+    0                           77.0000        0.0000           100.00%
+*     0+    0                           76.0000        0.0000           100.00%
+*     0+    0                           75.0000        0.0000           100.00%
+*     0+    0                           74.0000        0.0000           100.00%
+*     0+    0                           72.0000        0.0000           100.00%
+      0     0       31.6692   445       72.0000       31.6692     2937   56.01%
+*     0+    0                           43.0000       31.6692            26.35%
+      0     0       36.2057   474       43.0000     Cuts: 176     3340   15.80%
+      0     0       36.9013   475       43.0000      Cuts: 94     3489   14.18%
+*     0+    0                           41.0000       36.9013            10.00%
+*     0+    0                           39.0000       36.9013             5.38%
+Repeating presolve.
+Tried aggregator 2 times.
+MIP Presolve eliminated 20503 rows and 19432 columns.
+MIP Presolve modified 76183 coefficients.
+Aggregator did 9 substitutions.
+Reduced MIP has 5019 rows, 3077 columns, and 83771 nonzeros.
+Reduced MIP has 3077 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.37 sec. (567.48 ticks)
+Probing fixed 477 vars, tightened 0 bounds.
+Probing time = 0.04 sec. (14.97 ticks)
+Cover probing fixed 133 vars, tightened 14 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 1141 rows and 617 columns.
+MIP Presolve modified 11463 coefficients.
+Aggregator did 15 substitutions.
+Reduced MIP has 3717 rows, 2445 columns, and 55734 nonzeros.
+Reduced MIP has 2445 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.17 sec. (214.65 ticks)
+Probing fixed 1 vars, tightened 0 bounds.
+Probing time = 0.02 sec. (9.44 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 41 rows and 28 columns.
+MIP Presolve modified 158 coefficients.
+Reduced MIP has 3676 rows, 2417 columns, and 55195 nonzeros.
+Reduced MIP has 2417 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.09 sec. (81.76 ticks)
+Represolve time = 0.79 sec. (982.24 ticks)
+Probing time = 0.01 sec. (3.45 ticks)
+Clique table members: 20731.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.28 sec. (196.07 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           39.0000       36.9013             5.38%
+      0     0       37.1261   435       39.0000       37.1261     4925    4.80%
+      0     0       37.4808   432       39.0000      Cuts: 90     5031    3.90%
+      0     0       37.6128   441       39.0000      Cuts: 52     5165    3.56%
+Repeating presolve.
+Tried aggregator 3 times.
+MIP Presolve eliminated 1158 rows and 980 columns.
+MIP Presolve modified 5856 coefficients.
+Aggregator did 17 substitutions.
+Reduced MIP has 2377 rows, 1420 columns, and 28184 nonzeros.
+Reduced MIP has 1420 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.10 sec. (125.70 ticks)
+Probing fixed 86 vars, tightened 0 bounds.
+Probing changed sense of 17 constraints.
+Probing time = 0.01 sec. (3.15 ticks)
+Cover probing fixed 5 vars, tightened 0 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 183 rows and 92 columns.
+MIP Presolve modified 819 coefficients.
+Aggregator did 10 substitutions.
+Reduced MIP has 2183 rows, 1318 columns, and 25562 nonzeros.
+Reduced MIP has 1318 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (41.43 ticks)
+Probing time = 0.01 sec. (2.37 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 3 rows and 1 columns.
+MIP Presolve modified 8 coefficients.
+Reduced MIP has 2180 rows, 1317 columns, and 25534 nonzeros.
+Reduced MIP has 1317 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (26.79 ticks)
+Represolve time = 0.26 sec. (262.16 ticks)
+Probing time = 0.01 sec. (2.34 ticks)
+Clique table members: 5130.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.22 sec. (170.12 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           39.0000       37.6128             3.56%
+      0     0       37.6173   432       39.0000       37.6173     6660    3.55%
+      0     0        cutoff             39.0000       39.0000     6759    0.00%
+Elapsed time = 23.01 sec. (29511.17 ticks, tree = 0.01 MB, solutions = 13)
+GUB cover cuts applied:  60
+Clique cuts applied:  29
+Cover cuts applied:  1
+Implied bound cuts applied:  1
+Flow cuts applied:  15
+Mixed integer rounding cuts applied:  15
+Zero-half cuts applied:  63
+Lift and project cuts applied:  4
+Gomory fractional cuts applied:  12
+
+Root node processing (before b&c):
+  Real time             =   23.02 sec. (29515.80 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   23.02 sec. (29515.80 ticks)
+fprintf('exit status = % i\n', Solution.status);
+exit status =  1
+fprintf('solution time = % f\n', Solution.output.time);
+solution time =  23.031663
+
+% Post processing and check
+if Solution.status==1
+    fprintf('*********************************************************************\n')
+    fprintf('SOLUTION FOUND : Post-processing and checking errors\n');
+    fprintf('*********************************************************************\n')
+    Output=post_process(Solution,Pb,Input,Coolant,Geometry);
+else
+    fprintf('\n**********************    NO SOLUTION FOUND    **********************\n\n')
+end
+*********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	error: mixed outlet temperature violates constraint in step 1
+	error: mixed outlet temperature violates constraint in step 2
+	error: mixed outlet temperature violates constraint in step 3
+	error: mixed outlet temperature violates constraint in step 4
+	Checked : 	WARNING : 4 errors on constraints found during post-processing
+fprintf('\tSaving workspace\n');
+	Saving workspace
+save Last_Problem
+
+fprintf('*********************************************************************\n')
+*********************************************************************
+fprintf('END OF SCRIPT\n');
+END OF SCRIPT
+fprintf('*********************************************************************\n')
+*********************************************************************
+diary off

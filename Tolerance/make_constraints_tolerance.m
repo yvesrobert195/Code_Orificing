@@ -218,7 +218,7 @@ for i = 1:nass
         Aineq_v(idx_Aineq) = -x(j);
         idx_Aineq = idx_Aineq+1;
     end
-    bineq(nsteps*nass+2*nsteps+nsteps*nass+2*nadj*nsteps+nass*npossflows+nass*nsteps+nass+i) = -P.Constraints.tol;
+    bineq(nsteps*nass+2*nsteps+nsteps*nass+2*nadj*nsteps+nass*npossflows+nass*nsteps+nass+i) = P.Constraints.tol;
 end
 
 for i=1:nass

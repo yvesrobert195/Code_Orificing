@@ -5,6 +5,15 @@ fprintf('ORIFICE OPTIMIZATION SCRIPT\n')
 fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
 User_Input
+%% Files
+addpath(genpath('/global/home/users/yvesrobert/CPLEX/cplex/matlab/x86-64_linux'));
+Input.path='/global/home/users/yvesrobert/pop_neutrons/four_BU/';
+%Input.path='/global/home/users/yvesrobert/pop_neutrons/bnb/';
+Input.Core='A'; % Name of the core : A, bnb, A_one_row...
+  Input.names={'det0';'det1';'det2';'det3'};  % det files to study
+Pb.Var.x=linspace(1e-2,100,300);
+Pb.Constraints.tol=(Pb.Var.x(2)-Pb.Var.x(1))-1e-4;
+
 
 %% Initialization
 fprintf('*********************************************************************\n')
