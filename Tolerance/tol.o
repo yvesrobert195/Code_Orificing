@@ -4,3 +4,20 @@
                    R2017b (9.3.0.713579) 64-bit (glnxa64)
                              September 14, 2017
 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> *********************************************************************
+>> ORIFICE OPTIMIZATION SCRIPT
+>> 05-Jun-2018 11:33:01>> 
+*********************************************************************
+>> Reading input
+>> >> >> >> >> >> >> >> >> >> >> >> *********************************************************************
+>> Initialization
+>> *********************************************************************
+>> >> 	Reading geometry
+>> >> >> >> 	Reading power data
+>> >> >> >> >> >> 	Manipulating data
+>> >> >> >> >> >> >> 	Building coolant properties and temperature tables
+>> 
