@@ -2094,3 +2094,5 @@ Nodefile size = 6084.19 MB (4584.46 MB after compression)
 Elapsed time = 31267.02 sec. (10057863.43 ticks, tree = 6859.32 MB, solutions = 21)
 Nodefile size = 5260.49 MB (3965.22 MB after compression)
   68579 23971        cutoff             11.0000        9.6218 79227211   12.53%
+  74226 19915        cutoff             11.0000        9.6218 85120925   12.53%
+  75623 18931        cutoff             11.0000        9.6218 86122934   12.53%
