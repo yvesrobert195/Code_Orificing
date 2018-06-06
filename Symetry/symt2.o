@@ -1059,3 +1059,94 @@ Elapsed time = 275.00 sec. (284704.65 ticks, tree = 0.01 MB, solutions = 2)
     207   174        9.6796  2198       14.0000        8.4904  1211294   39.35%
     967   126        cutoff             11.0000        9.1403  4290939   16.91%
    1121   143        9.7750  3661       11.0000        9.1734  4697399   16.61%
+   1426    72        cutoff             11.0000        9.5787  6541521   12.92%
+   1438    11        9.9695  2363       11.0000        9.7209  8413515   11.63%
+   1442     8        cutoff             11.0000        9.7209  8468293   11.63%
+   1466     7        cutoff             11.0000       10.0000  8658409    9.09%
+   1475     8       10.0000  1499       11.0000       10.0000  9114796    9.09%
+   1482     6       10.0000  1311       11.0000       10.0000  9379049    9.09%
+   1498     4        cutoff             11.0000       10.0000  9657109    9.09%
+GUB cover cuts applied:  437
+Clique cuts applied:  327
+Cover cuts applied:  264
+Implied bound cuts applied:  178
+Flow cuts applied:  77
+Mixed integer rounding cuts applied:  247
+Zero-half cuts applied:  210
+
+Root node processing (before b&c):
+  Real time             =  270.10 sec. (279679.52 ticks)
+Parallel b&c, 20 threads:
+  Real time             = 1964.60 sec. (941600.35 ticks)
+  Sync time (average)   =  755.14 sec.
+  Wait time (average)   =    0.10 sec.
+                          ------------
+Total (root+branch&cut) = 2234.70 sec. (1221279.87 ticks)
+exit status =  1
+solution time =  2234.702713
+*********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	Checked : No error found
+
+
+*********************************************************************
+TEST WITH 110 FLOWRATES
+*********************************************************************
+	Building coolant properties and temperature tables
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 89103
+		             equality = 1481
+		           inequality = 87622
+		number of variables = 58163
+		            integer = 0
+		             binary = 57530
+		         continuous = 633
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+CPXPARAM_Output_CloneLog                         1
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 14755 rows and 40874 columns...
+Presolve has improved bounds 39556 times...
+Tried aggregator 2 times.
+MIP Presolve eliminated 60587 rows and 41234 columns.
+MIP Presolve modified 1938004 coefficients.
+Aggregator did 435 substitutions.
+Reduced MIP has 27810 rows, 16494 columns, and 656650 nonzeros.
+Reduced MIP has 16326 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 14.37 sec. (29858.40 ticks)
+Probing fixed 1369 vars, tightened 39 bounds.
+Probing time = 0.44 sec. (150.37 ticks)
+Cover probing fixed 0 vars, tightened 54 bounds.
+Tried aggregator 1 time.
+MIP Presolve eliminated 1851 rows and 1483 columns.
+MIP Presolve modified 22115 coefficients.
+Reduced MIP has 25766 rows, 15011 columns, and 593245 nonzeros.
+Reduced MIP has 14924 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.68 sec. (2105.26 ticks)
+Probing fixed 101 vars, tightened 20 bounds.
+Probing time = 0.59 sec. (461.60 ticks)
+Cover probing fixed 0 vars, tightened 2 bounds.
+Clique table members: 305124.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 29.17 sec. (22871.77 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        5.6342  2060                      5.6342    18891         
+      0     0        6.4627  3085                  Cuts: 1787    22081         
+*     0+    0                           47.0000        6.4627            86.25%
+      0     0        6.9106  3584       47.0000     Cuts: 970    27207   85.30%
