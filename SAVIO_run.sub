@@ -1,10 +1,10 @@
 #!/bin/sh
 
-#SBATCH --job-name=A2blanket
+#SBATCH --job-name=Tight2_devi
 
-#SBATCH --output=A2blanket.o
+#SBATCH --output=Tight2_devi.o
 
-#SBATCH --error=A2blanket.error
+#SBATCH --error=Tight2_devi.error
 
 #SBATCH --partition=savio
 
@@ -32,4 +32,4 @@
 # run command
 module load matlab
 mkdir -p /global/scratch/$USER/$SLURM_JOB_ID
-matlab -nodisplay -nosplash -nodesktop < /global/home/users/yvesrobert/Code_Orificing/Sensitivity_2fact.m
+matlab -nodisplay -nosplash -nodesktop < /global/home/users/yvesrobert/Code_Orificing/Sensitivity.m

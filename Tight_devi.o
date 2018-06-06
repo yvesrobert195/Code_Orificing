@@ -1,0 +1,779 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> *********************************************************************
+>> ORIFICE ITERATION TIME SCRIPT
+>> 05-Jun-2018 20:41:02>> 
+*********************************************************************
+>> Reading input
+>> >> >> >> >> >> >> >> 
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 9
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 234.608340 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 72013 columns...
+Presolve has improved bounds 70363 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 81206 rows and 74126 columns.
+MIP Presolve modified 2549244 coefficients.
+Reduced MIP has 27789 rows, 24570 columns, and 1007211 nonzeros.
+Reduced MIP has 24217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 20.68 sec. (39664.69 ticks)
+Probing time = 0.11 sec. (17.10 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 27789 rows, 24570 columns, and 1007211 nonzeros.
+Reduced MIP has 24570 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.99 sec. (615.08 ticks)
+Probing time = 0.04 sec. (16.56 ticks)
+Clique table members: 96859.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 1.93 sec. (1821.97 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          354.0000        0.0000           100.00%
+*     0+    0                          110.0000        0.0000           100.00%
+      0     0       53.4722   323      110.0000       53.4722     4001   51.39%
+*     0+    0                           63.0000       53.4722            15.12%
+      0     0       56.7300   373       63.0000      Cuts: 94     4430    9.95%
+      0     0       57.6386   387       63.0000      Cuts: 81     4747    8.51%
+*     0+    0                           62.0000       57.6386             7.03%
+*     0+    0                           61.0000       57.6386             5.51%
+Repeating presolve.
+Tried aggregator 2 times.
+MIP Presolve eliminated 19929 rows and 18806 columns.
+MIP Presolve modified 114716 coefficients.
+Aggregator did 7 substitutions.
+Reduced MIP has 7273 rows, 5757 columns, and 188310 nonzeros.
+Reduced MIP has 5757 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.81 sec. (1138.07 ticks)
+Probing fixed 2980 vars, tightened 0 bounds.
+Probing time = 0.05 sec. (22.03 ticks)
+Cover probing fixed 3 vars, tightened 0 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 3344 rows and 3020 columns.
+MIP Presolve modified 31222 coefficients.
+Aggregator did 10 substitutions.
+Reduced MIP has 3691 rows, 2727 columns, and 60231 nonzeros.
+Reduced MIP has 2727 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.16 sec. (208.14 ticks)
+Probing time = 0.03 sec. (10.58 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 6 columns.
+MIP Presolve modified 9 coefficients.
+Reduced MIP has 3690 rows, 2721 columns, and 60156 nonzeros.
+Reduced MIP has 2721 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (61.72 ticks)
+Represolve time = 1.28 sec. (1570.01 ticks)
+Probing time = 0.01 sec. (6.24 ticks)
+Clique table members: 26590.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.19 sec. (121.53 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           61.0000       57.6386             5.51%
+      0     0       57.6705   372       61.0000       57.6705     6247    5.46%
+      0     0       58.7460   389       61.0000     Cuts: 134     6527    3.70%
+      0     0       59.1717   384       61.0000      Cuts: 81     6760    3.00%
+Repeating presolve.
+Tried aggregator 3 times.
+MIP Presolve eliminated 922 rows and 714 columns.
+MIP Presolve modified 12170 coefficients.
+Aggregator did 40 substitutions.
+Reduced MIP has 2617 rows, 1967 columns, and 34990 nonzeros.
+Reduced MIP has 1967 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.12 sec. (148.94 ticks)
+Probing fixed 418 vars, tightened 0 bounds.
+Probing changed sense of 1 constraints.
+Probing time = 0.02 sec. (6.26 ticks)
+Cover probing fixed 11 vars, tightened 0 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 507 rows and 440 columns.
+MIP Presolve modified 8227 coefficients.
+Aggregator did 10 substitutions.
+Reduced MIP has 1985 rows, 1517 columns, and 20832 nonzeros.
+Reduced MIP has 1517 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.05 sec. (67.23 ticks)
+Probing time = 0.01 sec. (2.41 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 1985 rows, 1517 columns, and 20832 nonzeros.
+Reduced MIP has 1517 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (13.79 ticks)
+Represolve time = 0.30 sec. (312.91 ticks)
+Probing time = 0.01 sec. (2.41 ticks)
+Clique table members: 13866.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.14 sec. (92.16 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           61.0000       59.1717             3.00%
+      0     0       59.1739   354       61.0000       59.1739     7947    2.99%
+      0     0       59.3713   354       61.0000      Cuts: 74     8063    2.65%
+      0     0       59.6619   347       61.0000     Cuts: 121     8206    2.19%
+      0     0       59.7841   325       61.0000      Cuts: 59     8286    1.99%
+      0     0        cutoff             61.0000       61.0000     8351    0.00%
+Elapsed time = 32.53 sec. (48948.14 ticks, tree = 0.01 MB, solutions = 7)
+GUB cover cuts applied:  58
+Clique cuts applied:  67
+Cover cuts applied:  3
+Flow cuts applied:  11
+Mixed integer rounding cuts applied:  23
+Zero-half cuts applied:  65
+Lift and project cuts applied:  2
+Gomory fractional cuts applied:  4
+
+Root node processing (before b&c):
+  Real time             =   32.54 sec. (48955.66 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   32.54 sec. (48955.66 ticks)
+exit status =  1
+solution time =  32.550112
+*********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	Checked : No error found
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 8
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 230.825112 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5616 rows and 72022 columns...
+Presolve has improved bounds 69304 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 81206 rows and 74126 columns.
+MIP Presolve modified 2398186 coefficients.
+Reduced MIP has 27789 rows, 24570 columns, and 937168 nonzeros.
+Reduced MIP has 24217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 19.60 sec. (37426.43 ticks)
+Probing time = 0.09 sec. (16.63 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 27789 rows, 24570 columns, and 937168 nonzeros.
+Reduced MIP has 24570 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.91 sec. (564.04 ticks)
+Probing time = 0.03 sec. (16.19 ticks)
+Clique table members: 97222.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 1.87 sec. (1688.44 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          354.0000        0.0000           100.00%
+*     0+    0                          109.0000        0.0000           100.00%
+      0     0       58.5923   305      109.0000       58.5923     5411   46.25%
+*     0+    0                           70.0000       58.5923            16.30%
+      0     0       62.2271   357       70.0000     Cuts: 114     6400   11.10%
+      0     0       63.0489   332       70.0000      Cuts: 65     6985    9.93%
+*     0+    0                           69.0000       63.0489             8.62%
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 15786 rows and 14757 columns.
+MIP Presolve modified 145146 coefficients.
+Reduced MIP has 11475 rows, 9813 columns, and 286725 nonzeros.
+Reduced MIP has 9813 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.98 sec. (1356.47 ticks)
+Probing fixed 6016 vars, tightened 0 bounds.
+Probing time = 0.09 sec. (55.75 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 6393 rows and 6167 columns.
+MIP Presolve modified 49001 coefficients.
+Aggregator did 12 substitutions.
+Reduced MIP has 4841 rows, 3634 columns, and 87474 nonzeros.
+Reduced MIP has 3634 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.24 sec. (333.13 ticks)
+Probing fixed 188 vars, tightened 0 bounds.
+Probing time = 0.03 sec. (27.71 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 190 rows and 212 columns.
+MIP Presolve modified 2367 coefficients.
+Aggregator did 3 substitutions.
+Reduced MIP has 4640 rows, 3419 columns, and 82723 nonzeros.
+Reduced MIP has 3419 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.15 sec. (171.18 ticks)
+Probing time = 0.01 sec. (3.50 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 4640 rows, 3419 columns, and 82723 nonzeros.
+Reduced MIP has 3419 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (50.52 ticks)
+Represolve time = 1.79 sec. (2173.96 ticks)
+Probing time = 0.01 sec. (3.53 ticks)
+Clique table members: 53759.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.52 sec. (379.09 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           69.0000       63.0489             8.62%
+      0     0       63.1120   331       69.0000       63.1120    11694    8.53%
+      0     0       64.0564   357       69.0000     Cuts: 124    12146    7.16%
+*     0+    0                           68.0000       64.0564             5.80%
+      0     0       64.5954   370       68.0000      Cuts: 51    12436    5.01%
+      0     0       65.1761   358       68.0000     Cuts: 115    12627    4.15%
+*     0+    0                           67.0000       65.1761             2.72%
+      0     0       65.4355   362       67.0000      Cuts: 49    12740    2.34%
+Repeating presolve.
+Tried aggregator 3 times.
+MIP Presolve eliminated 2230 rows and 1632 columns.
+MIP Presolve modified 16802 coefficients.
+Aggregator did 63 substitutions.
+Reduced MIP has 2159 rows, 1724 columns, and 26636 nonzeros.
+Reduced MIP has 1724 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (80.95 ticks)
+Probing fixed 628 vars, tightened 0 bounds.
+Probing time = 0.01 sec. (5.14 ticks)
+Cover probing fixed 32 vars, tightened 0 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 767 rows and 677 columns.
+MIP Presolve modified 6206 coefficients.
+Aggregator did 16 substitutions.
+Reduced MIP has 1256 rows, 1031 columns, and 9433 nonzeros.
+Reduced MIP has 1031 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (22.55 ticks)
+Probing time = 0.00 sec. (2.07 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 5 coefficients.
+Reduced MIP has 1256 rows, 1031 columns, and 9433 nonzeros.
+Reduced MIP has 1031 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (6.80 ticks)
+Represolve time = 0.22 sec. (222.15 ticks)
+Probing time = 0.00 sec. (2.13 ticks)
+Clique table members: 3469.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.07 sec. (62.53 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           67.0000       65.4355             2.34%
+      0     0       65.4499   308       67.0000       65.4499    13915    2.31%
+      0     0        cutoff             67.0000       67.0000    14062    0.00%
+Elapsed time = 33.36 sec. (47988.87 ticks, tree = 0.01 MB, solutions = 10)
+GUB cover cuts applied:  83
+Clique cuts applied:  68
+Cover cuts applied:  6
+Implied bound cuts applied:  2
+Flow cuts applied:  16
+Mixed integer rounding cuts applied:  29
+Zero-half cuts applied:  82
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =   33.37 sec. (47998.33 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   33.37 sec. (47998.33 ticks)
+exit status =  1
+solution time =  33.383873
+*********************************************************************
+SOLUTION FOUND : Post-processing and checking errors
+*********************************************************************
+	Creating Solution
+	Checking errors
+	Checked : No error found
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 7
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 230.310000 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5620 rows and 72029 columns...
+Presolve has improved bounds 66410 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 81190 rows and 74126 columns.
+MIP Presolve modified 2188500 coefficients.
+Reduced MIP has 27810 rows, 24570 columns, and 870092 nonzeros.
+Reduced MIP has 24217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 18.05 sec. (34861.93 ticks)
+Probing time = 0.06 sec. (16.17 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 27810 rows, 24570 columns, and 870092 nonzeros.
+Reduced MIP has 24570 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.88 sec. (518.73 ticks)
+Probing time = 0.04 sec. (15.68 ticks)
+Clique table members: 96816.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.97 sec. (799.22 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0    infeasible                                       4975         
+
+Root node processing (before b&c):
+  Real time             =   22.61 sec. (37649.45 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   22.61 sec. (37649.45 ticks)
+exit status = -8
+solution time =  22.625686
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 6
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 231.185958 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5620 rows and 72053 columns...
+Presolve has improved bounds 60775 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 81164 rows and 74126 columns.
+MIP Presolve modified 2030191 coefficients.
+Reduced MIP has 27828 rows, 24570 columns, and 843246 nonzeros.
+Reduced MIP has 24217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 16.84 sec. (33428.51 ticks)
+Probing fixed 642 vars, tightened 0 bounds.
+Probing time = 0.50 sec. (287.21 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 665 rows and 642 columns.
+MIP Presolve modified 136775 coefficients.
+Reduced MIP has 27124 rows, 23928 columns, and 817553 nonzeros.
+Reduced MIP has 23928 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.98 sec. (1482.50 ticks)
+Probing time = 0.05 sec. (17.17 ticks)
+Clique table members: 433689.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.20 sec. (169.88 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0    infeasible                                        246         
+
+Root node processing (before b&c):
+  Real time             =   22.25 sec. (36760.91 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   22.25 sec. (36760.91 ticks)
+exit status = -8
+solution time =  22.254906
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 5
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 204.450818 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5620 rows and 72114 columns...
+Presolve has improved bounds 54585 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 81125 rows and 74126 columns.
+MIP Presolve modified 1931315 coefficients.
+Reduced MIP has 27886 rows, 24570 columns, and 836196 nonzeros.
+Reduced MIP has 24217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 16.19 sec. (32792.68 ticks)
+Probing fixed 642 vars, tightened 0 bounds.
+Probing time = 0.49 sec. (278.29 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 691 rows and 642 columns.
+MIP Presolve modified 150476 coefficients.
+Reduced MIP has 27130 rows, 23928 columns, and 802634 nonzeros.
+Reduced MIP has 23928 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.86 sec. (1689.36 ticks)
+Probing time = 0.05 sec. (14.76 ticks)
+Clique table members: 430164.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 20 threads.
+Root relaxation solution time = 0.21 sec. (146.75 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0    infeasible                                        121         
+
+Root node processing (before b&c):
+  Real time             =   21.18 sec. (36201.51 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   21.18 sec. (36201.51 ticks)
+exit status = -8
+solution time =  21.202340
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 4
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 200.385790 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5620 rows and 72183 columns...
+Presolve has improved bounds 47961 times...
+Row 'c2383' infeasible, all entries at implied bounds.
+Presolve time = 12.07 sec. (26250.10 ticks)
+
+Root node processing (before b&c):
+  Real time             =   13.04 sec. (26543.57 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   13.04 sec. (26543.57 ticks)
+exit status = -2
+solution time =  13.041149
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 3
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 202.384220 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5620 rows and 72243 columns...
+Presolve has improved bounds 41612 times...
+Infeasibility row 'c86':  0  = -48640.
+Presolve time = 11.43 sec. (25137.32 ticks)
+
+Root node processing (before b&c):
+  Real time             =   12.42 sec. (25428.58 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   12.42 sec. (25428.58 ticks)
+exit status = -2
+solution time =  12.424821
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 2
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 201.432964 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Presolve has eliminated 5620 rows and 72288 columns...
+Presolve has improved bounds 37287 times...
+Infeasibility row 'c97':  0  = -36877.9.
+Presolve time = 11.41 sec. (24723.45 ticks)
+
+Root node processing (before b&c):
+  Real time             =   12.42 sec. (25013.25 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   12.42 sec. (25013.25 ticks)
+exit status = -2
+solution time =  12.435301
+
+**********************    NO SOLUTION FOUND    **********************
+
+
+
+*********************************************************************
+TEST WITH Pb.Constraints.rings_outlet = 1
+*********************************************************************
+*********************************************************************
+Initialization
+*********************************************************************
+	Reading geometry
+	Reading power data
+	Manipulating data
+	Building coolant properties and temperature tables
+Elapsed time is 200.379584 seconds.
+*********************************************************************
+Constraint matrices
+*********************************************************************
+	Initialization of constraint matrices
+	Building constraint matrices
+	Building the constraint matrices
+		number of constraints = 109344
+		             equality = 392
+		           inequality = 108952
+		number of variables = 98696
+		            integer = 0
+		             binary = 98000
+		         continuous = 696
+*********************************************************************
+Solving with CPLEX
+*********************************************************************
+Default variable names x1, x2 ... being created.
+Default row names c1, c2 ... being created.
+Warning:  Non-integral bounds for integer variables rounded.
+Infeasibility row 'c98':  0 <= -34392.9.
+Presolve time = 1.01 sec. (498.94 ticks)
+
+Root node processing (before b&c):
+  Real time             =    2.03 sec. (788.01 ticks)
+Parallel b&c, 20 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    2.03 sec. (788.01 ticks)
+exit status = -2
+solution time =  2.034923
+
+**********************    NO SOLUTION FOUND    **********************
+
+>> >> >> *********************************************************************
+>> END OF SCRIPT
+>> *********************************************************************
+>> >> >> 

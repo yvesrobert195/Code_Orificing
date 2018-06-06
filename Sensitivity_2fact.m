@@ -10,10 +10,10 @@ comment=['_test']; %additional comments for the name (put '_')
 sol_name=['sens_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
 
 sens_out='Geometry.nrings'; %outside iteration factor
-vect_out=9:-1:7; % values for outside iteration factor
+vect_out=8:-1:1; % values for outside iteration factor
 
 sens_in='Pb.Constraints.xi_blanket'; %inside iteration factor
-vect_in=50:5:60; % values for inside iteration factor
+vect_in=50:10:110; % values for inside iteration factor
 
 n=0;
 for factor1=1:length(vect_out)

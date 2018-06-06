@@ -6,10 +6,10 @@ fprintf(datestr(now))
 fprintf('\n*********************************************************************\n')
 User_Input
 % INPUT SPECIFICALLY FOR SENSITIVITY
-comment=['_xi']; %additional comments for the name (put '_')
+comment=['_devitight']; %additional comments for the name (put '_')
 sol_name=['sens_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
-sens='Pb.Constraints.xi_power'; % Parameter to vary
-vect=40:5:50;
+sens='Pb.Constraints.rings_outlet'; % Parameter to vary
+vect=9:-1:1;
 
 n=0;
 for factor=1:length(vect)

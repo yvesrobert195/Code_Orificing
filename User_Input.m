@@ -10,9 +10,9 @@ diary('Last_run.log')
 fprintf('Reading input\n')
 
 %% Files
-%Input.path='/global/home/users/yvesrobert/pop_neutrons/four_BU/';
-Input.path='/global/home/users/yvesrobert/pop_neutrons/bnb/';
-Input.Core='BnB'; % Name of the core : A, bnb, A_one_row...
+Input.path='/global/home/users/yvesrobert/pop_neutrons/four_BU/';
+%Input.path='/global/home/users/yvesrobert/pop_neutrons/bnb/';
+Input.Core='A'; % Name of the core : A, bnb, A_one_row...
   Input.names={'det0';'det1';'det2';'det3'};  % det files to study
 
 %% User parameters
@@ -25,7 +25,7 @@ Pb.Var.x=logspace(-1,2,500);
 Pb.Constraints.T_out_bar = 510; % perfectly mixed coolant outlet plenum temperature, C
 Pb.Constraints.T_out_bar_tol=5; % tolerance on mixed outlet temperature
 Pb.Constraints.v_max = 12.0; % maximum coolant velocity allowed in assembly, m/s, limit taken from Qvist et al
-Pb.Constraints.dT_max = 210;
+Pb.Constraints.dT_max = 200;
 Pb.Constraints.dP_max = 1e6; % maximum allowable pressure drop over core, Pa, limit taken from Qvist et al
 Pb.Constraints.xi_blanket= 50; % maximum outlet temperature difference between adjacent assemblies in the blanket, C. To change frontier : ./Functions/Initialization/Geometry.m
 Pb.Constraints.xi_power = 50; % maximum outlet temperature difference between adjacent power assemblies, C (no differenciation if both xi are equal)
@@ -34,7 +34,8 @@ Pb.Constraints.rings_outlet=100; % assemblies participating to the outlet temper
 %% CPLEX options
 Pb.CPLEX.opts=cplexoptimset('display','on'); % Option to display iterations ('iter','on','off')
 Pb.CPLEX.opts.exportmodel = 'model.lp'; % Name of the saved model
-Pb.CPLEX.workmem = 0.95*64000; % Maximum RAM to allocate for CPLEX 
+Pb.CPLEX.opts.output.clonelog=0;
+Pb.CPLEX.workmem = 0.5*64000; % Maximum RAM to allocate for CPLEX 
 
 %% Concatenate path and name
 for i=1:length(Input.names)
