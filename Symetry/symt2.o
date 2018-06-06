@@ -1,85 +1,25 @@
-Reading input
-% INPUT SPECIFICALLY FOR ITERATION TIME
-comment=['_10']; %additional comments for the name (put '_')
-sol_name=['sym_' datestr(now,'mm-dd-yy_HH-MM-SS') comment '.mat']; %creates unique mat file for the test
-ini=10;
-step=10;
 
-%% Initialization
-fprintf('*********************************************************************\n')
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017b (9.3.0.713579) 64-bit (glnxa64)
+                             September 14, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> *********************************************************************
+>> ORIFICE ITERATION TIME SCRIPT
+>> 05-Jun-2018 15:47:13>> 
 *********************************************************************
-fprintf('Initialization\n')
-Initialization
-fprintf('*********************************************************************\n')
-*********************************************************************
-% Assign geometry
-fprintf('\tReading geometry\n')
-	Reading geometry
-Geometry=geometry(Input.Core);
-
-% Reads det files
-fprintf('\tReading power data\n')
-	Reading power data
-[Pb.Constraints.same_pos,Input.Q,Input.adjacentAssemblies]= readQ_sym(Input.powerDetectorFiles,Input.assemblyPowerThreshold);
-Input.Q_ave = sum(Input.Q,2)/length(Input.powerDetectorFiles); % divide by number of steps to get average assembly power over cycle
-
-fprintf('\tManipulating data\n');
-	Manipulating data
-Pb.Var.nass = length(Input.Q_ave); % number of assemblies in problem
-Pb.Var.nsteps = length(Input.powerDetectorFiles);
-
-
-
-n=0;
-while 1
-    fprintf('\n\n*********************************************************************\n')
-    fprintf(['TEST WITH ' num2str(ini+n*step) ' FLOWRATES\n'])
-    fprintf('*********************************************************************\n')
-    
-    Pb.Var.x=logspace(-2,2,ini+n*step);
-    Pb.Var.npossflows = length(Pb.Var.x); % number of possible flowrates specified as data
-    Pb.Var.nvars = Pb.Var.nass+Pb.Var.nass*Pb.Var.npossflows+Pb.Var.npossflows; % number of total variables
-    
-    % Build tables of coolant properties and temperature
-    fprintf('\tBuilding coolant properties and temperature tables\n')
-    Coolant=coolant_properties('sodium',Input,Pb,Geometry);
-    
-    % Find which assemblies have adjacents and how many adjacent pairs
-    Input.nadj = nnz(Input.adjacentAssemblies); % number of adjacent assembly pairs
-    
-    % Read and create rings
-    Geometry.rings=find_rings(Input.adjacentAssemblies);
-    
-    % Create constraints
-    fprintf('*********************************************************************\n')
-    fprintf('Constraint matrices\n')
-    fprintf('*********************************************************************\n')
-    Pb=make_constraints_symetry(Pb,Input,Coolant,Geometry);
-    
-    % Solve
-    fprintf('*********************************************************************\n')
-    fprintf('Solving with CPLEX\n');
-    fprintf('*********************************************************************\n')
-    [Solution.solutionvector, Solution.objval, Solution.status, Solution.output] = cplexmilp(Pb.CPLEX.c, Pb.CPLEX.Aineq, Pb.CPLEX.bineq, Pb.CPLEX.Aeq, Pb.CPLEX.beq, [], [], [], [], [], Pb.CPLEX.ctype,[],Pb.CPLEX.opts);
-    fprintf('exit status = % i\n', Solution.status);
-    fprintf('solution time = % f\n', Solution.output.time);
-    
-    % Post processing and check
-    if Solution.status==1
-        fprintf('*********************************************************************\n')
-        fprintf('SOLUTION FOUND : Post-processing and checking errors\n');
-        fprintf('*********************************************************************\n')
-        Output=post_process(Solution,Pb,Input,Coolant,Geometry);
-    else
-        Output={};
-        fprintf('\n**********************    NO SOLUTION FOUND    **********************\n\n')
-    end
-    
-    Results(n+1,:)={length(Pb.Var.x) Output Solution Solution.status};
-    n=n+1;
-    save(['../Solutions/' sol_name],'Results')
-end
-
+>> Reading input
+>> >> >> >> >> >> >> >> *********************************************************************
+>> Initialization
+>> *********************************************************************
+>> >> 	Reading geometry
+>> >> >> >> 	Reading power data
+>> >> >> >> 	Manipulating data
+>> >> >> >> >> >> >> 
 
 *********************************************************************
 TEST WITH 10 FLOWRATES
@@ -1107,4 +1047,15 @@ Root relaxation solution time = 24.72 sec. (19830.44 ticks)
 Heuristic still looking.
 Heuristic still looking.
       0     2        8.1819  5103       15.0000        8.1819    82028   45.45%
-Elapsed time = 
+Elapsed time = 275.00 sec. (284704.65 ticks, tree = 0.01 MB, solutions = 2)
+      4     6        8.2331  4653       15.0000        8.1819    93596   45.45%
+      5     3        9.2646  3510       15.0000        8.1819    99618   45.45%
+     15     6       10.8611  2870       15.0000        8.2081   111276   45.28%
+     22    23        9.1960  3508       15.0000        8.2331   221624   45.11%
+     40    27        9.9118  3660       14.0000        8.2331   240524   41.19%
+     48    30       10.2388  4103       14.0000        8.2331   249838   41.19%
+    105    57        9.9467  3438       14.0000        8.3805   448008   40.14%
+    163   127        9.1759  2902       14.0000        8.4904   831461   39.35%
+    207   174        9.6796  2198       14.0000        8.4904  1211294   39.35%
+    967   126        cutoff             11.0000        9.1403  4290939   16.91%
+   1121   143        9.7750  3661       11.0000        9.1734  4697399   16.61%

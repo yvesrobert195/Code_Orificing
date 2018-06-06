@@ -1,10 +1,10 @@
 #!/bin/sh
 
-#SBATCH --job-name=symtime
+#SBATCH --job-name=symt2
 
-#SBATCH --output=symtime.o
+#SBATCH --output=symt2.o
 
-#SBATCH --error=symtime.error
+#SBATCH --error=symt2.error
 
 #SBATCH --partition=savio
 

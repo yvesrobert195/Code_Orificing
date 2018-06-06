@@ -10,9 +10,9 @@ diary('Last_run.log')
 fprintf('Reading input\n')
 
 %% Files
-Input.path='/global/home/users/yvesrobert/pop_neutrons/four_BU/';
-%Input.path='/global/home/users/yvesrobert/pop_neutrons/bnb/';
-Input.Core='A'; % Name of the core : A, bnb, A_one_row...
+%Input.path='/global/home/users/yvesrobert/pop_neutrons/four_BU/';
+Input.path='/global/home/users/yvesrobert/pop_neutrons/bnb/';
+Input.Core='BnB'; % Name of the core : A, bnb, A_one_row...
   Input.names={'det0';'det1';'det2';'det3'};  % det files to study
 
 %% User parameters

@@ -32,4 +32,4 @@
 # run command
 module load matlab
 mkdir -p /global/scratch/$USER/$SLURM_JOB_ID
-matlab -nodisplay -nosplash -nodesktop < /global/home/users/yvesrobert/Code_Orificing/Iteration.m
+matlab -nodisplay -nosplash -nodesktop < /global/home/users/yvesrobert/Code_Orificing/Symetry/Iteration.m
